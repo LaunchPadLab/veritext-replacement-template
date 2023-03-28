@@ -1,6 +1,7 @@
 const Figaro = require('figaro-js')
 const { pickBy, mapValues } = require('lodash')
 const { REQUIRED_KEYS } = require('./figaro')
+const path = require('path')
 
 // Converts strings to primitive values if possible
 // Eg '5' -> 5, 'true' -> true, 'string' -> 'string'
@@ -15,7 +16,9 @@ function coerce(str) {
 
 // Loads figaro values into process.env
 function loadEnv() {
-  Figaro.load()
+  Figaro.load({
+    path: path.resolve(__dirname, './application.yml')
+   })
   Figaro.requireKeys(...REQUIRED_KEYS)
 }
 

@@ -8,7 +8,7 @@ const to = relPath => path.join(rootPath, relPath)
 const paths = {
   sourceFolder: to('src'),
   jsFolder: to('src/js'),
-  outputFolder: to('build'),
+  outputFolder: to('../build'),
   publicFolder: to('public'),
   htmlTemplate: to('src/html/index.html'),
 }

@@ -4,7 +4,7 @@ const enforceSSL = require('express-enforces-ssl')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 const compression = require('compression')
 const exposeEnvMiddleware = require('expose-env-middleware')
-const { loadEnv, loadPublicEnv } = require('./config/env')
+const { loadEnv, loadPublicEnv } = require('../fe/config/env')
 
 loadEnv()
 
@@ -41,7 +41,7 @@ app.use(express.static('build'))
 app.get('/env', exposeEnvMiddleware(loadPublicEnv))
 
 // Send main index file for every request
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, '/build/index.html')))
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, "../", '/build/index.html')))
 
 // Proxy requests if proxy API url is provided
 if (PROXIED_API_URL) app.use('/proxy', createProxyMiddleware({

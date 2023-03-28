@@ -1,27 +1,2 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# Dependencies
-/node_modules
-
-# Testing
-/coverage
-/cypress/screenshots
-/cypress/videos
-
-# Logs
-.DS_Store
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Env vars
-.env*
-/config/application.yml
-
-# Dot index files
-.index.js
-
-# Compiled
 /build
-.webpack-stats.json
-package-lock.json
+/node_modules

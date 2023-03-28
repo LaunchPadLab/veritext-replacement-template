@@ -1,5 +1,9 @@
 # Veritext Replacement Template
 
+`yarn install`
+`yarn start`
+
+
 ## Features
 - Seperate frontend and backend into their own resptective directories
 - leverages yarn workspaces

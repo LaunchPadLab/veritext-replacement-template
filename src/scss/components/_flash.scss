@@ -1,0 +1,49 @@
+/*-----------------------
+Flash
+-----------------------*/
+.flash-message{
+  @include position(fixed, 0px 0px null 0px);
+  @include rem(padding, 10px 20px);
+  z-index: 5;
+
+  p{
+    font-weight: $bold;
+    text-align: center;
+  }
+
+  &.success{
+    background-color: $green-light;
+
+    p{
+      color: $green-dark;
+    }
+  }
+
+  &.failure{
+    background-color: $red-light;
+
+    p{
+      color: $red-dark;
+    }
+  }
+}
+
+//Animation
+
+.flash-enter {
+  opacity: 0.01;
+
+  &.flash-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+}
+
+.flash-leave {
+  opacity: 1;
+
+  &.flash-leave-active {
+    opacity: 0.01;
+    transition: opacity 0.3s ease-in;
+  }
+}

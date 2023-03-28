@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Product-Index" transform="translate(-460.000000, -255.000000)" stroke="#444444" stroke-width="2.66">
+            <g id="Group" transform="translate(462.000000, 257.000000)">
+                <circle id="Oval" cx="7.63636364" cy="7.63636364" r="7.63636364"></circle>
+                <path d="M13.3636364,13.3636364 L20.3342151,20.3342151" id="Line" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

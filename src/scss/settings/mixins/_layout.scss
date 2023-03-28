@@ -1,0 +1,84 @@
+//MEDIA QUERIES
+$tablet: (
+  columns: 12,
+  gutter: 32px,
+  media: 720px,
+);
+
+$tablet-landscape: (
+  columns: 12,
+  gutter: 32px,
+  media: 1024px,
+);
+
+//BORDERS
+$grey-border: 1px solid $grey-light;
+
+//MIXINS
+@mixin center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@mixin base-padding {
+  @include rem(padding, 20px);
+
+  @include grid-media($tablet) { @include rem(padding, 30px); }
+}
+
+@mixin vertical-center {
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+}
+
+@mixin horizontal-center {
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+}
+
+@mixin vertical-horizontal-center {
+  @include vertical-center;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+img { width: 100%; }
+
+@mixin clickable-block {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin mobile-hide {
+  display: none;
+  @include grid-media($tablet) { display: block; }
+}
+
+@mixin desktop-hide{
+  @include grid-media ($tablet){ display: none; }
+}
+
+.horizontal-divider {
+  border-bottom: $grey-border;
+}
+
+@mixin ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin outline-dark{
+  outline: 1px dotted $black-base;
+  outline-offset: 2px;
+}
+
+@mixin outline-light{
+  outline: 1px dotted $white-base;
+  outline-offset: 2px;
+}

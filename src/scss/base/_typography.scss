@@ -1,0 +1,85 @@
+// Base Typography
+// ========================================
+
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @include font-type($primary-sans-serif, normal, normal);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black-base;
+  @include font-type($primary-sans-serif, normal, $regular);
+  @include rem(margin-bottom, 12px);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  a{
+    @include font-type($primary-sans-serif, normal, $regular);
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+h1 { @include rem(font-size, $font-size-base * 2.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.75); } }
+h2 { @include rem(font-size, $font-size-base * 1.75); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.50); } }
+h3 { @include rem(font-size, $font-size-base * 1.50); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.25); } }
+h4 { @include rem(font-size, $font-size-base * 1.25); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.5); } }
+h5 { @include rem(font-size, $font-size-base * 1.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.25); } }
+h6 { @include rem(font-size, $font-size-base - 2.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.00); } }
+
+
+p{
+  color: $black-base;
+  font-weight: normal;
+  font-style: normal;
+  @include font-type($primary-sans-serif, normal, $regular);
+  @include s-base;
+  @include rem(margin-bottom, 12px);
+  line-height: $base-line-loose;
+
+  &:last-child { @include rem(margin-bottom, 0); }
+}
+
+li,
+dd{
+  color: $black-base;
+  @include font-type($primary-sans-serif, normal, normal);
+  @include s-base;
+  line-height: $base-line-height;
+  list-style: none;
+}
+
+a {
+  color: $black-base;
+  cursor: pointer;
+  @include s-base;
+  @include font-type($primary-sans-serif, normal, $bold);
+  text-decoration: underline;
+  transition: all .5s ease-in-out;
+
+  &:hover, &:focus  {
+    color: $black-dark;
+  }
+}
+
+strong, b { font-weight: $bold; }
+i, em { font-style: italic; }
+
+u{
+  text-decoration: underline;
+}

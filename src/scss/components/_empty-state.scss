@@ -1,0 +1,19 @@
+/*-----------------------
+Empty State
+-----------------------*/
+
+.empty-state{
+	background-color: $grey-light;
+	@include center;
+	@include rem(padding, 30px);
+	max-width: 600px;
+	text-align: center;
+
+	img{
+		background-color: lighten($grey-base, 10%);
+		border-radius: 20em;
+		@include rem(margin-bottom, 10px);
+		@include rem(padding, 12px);
+		max-width: 50px;
+	}
+}

@@ -1,0 +1,7 @@
+# Browsers that we support
+# Used by autoprefixer & babel-preset-env
+
+>1%
+last 4 versions
+Firefox ESR
+not IE < 9

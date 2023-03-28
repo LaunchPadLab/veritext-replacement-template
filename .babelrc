@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@launchpadlab/babel-preset/react",
+      {
+        "env": {
+          "useBuiltIns": "usage",
+          "corejs": "3.19"
+        }
+      }
+    ]
+  ]
+}

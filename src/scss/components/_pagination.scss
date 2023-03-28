@@ -1,0 +1,83 @@
+/*-----------------------
+Pagination
+-----------------------*/
+.pagination{
+  display: table;
+  @include rem(margin, 20px auto 0px);
+
+  li{
+    float: left;
+    @include rem(margin, 0px 8px);
+    @include s-small;
+
+    &:last-child{
+      margin: 0;
+    }
+
+    a{
+      border-radius: 2px;
+      color: $black-base;
+      float: left;
+      height: 35px;
+      text-decoration: none;
+      text-align: center;
+      width: 35px;
+      line-height: 2.3;
+
+      &:hover{
+        color: $black-dark;
+      }
+    }
+ 
+    &.active a,
+    a:active {
+      background-color: $primary-base;
+      border-radius: 20em;
+      color: $white-base;
+
+      &:hover{
+        background-color: $primary-dark;
+        color: $white-base;
+      }
+    }
+
+    .delimeter{
+      display: block;
+      @include rem(padding-top, 6px);
+    }
+  }
+}
+
+//With Arrows
+@mixin pagination-arrows{
+  background-position: top;
+  background-size: 100%;
+  content:"";
+  display: inline-block;
+  height: 16px;
+  transition: all 0.3s ease-in-out;
+  width: 8px;
+  vertical-align: sub;
+}
+
+.pagination{
+  .next a{
+    width: auto;
+
+    &:after{
+      background: url('../images/utility-icons/arrow-right.svg') no-repeat;
+      @include pagination-arrows;
+      @include rem(margin-left, 10px);
+      }
+    }
+
+  .prev a{
+    width: auto;
+
+    &:before{
+      background: url('../images/utility-icons/arrow-left.svg') no-repeat;
+      @include pagination-arrows;
+      @include rem(margin-right, 10px);
+    }
+  }
+}

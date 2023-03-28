@@ -1,0 +1,78 @@
+/*-----------------------
+Tooltip
+-----------------------*/
+
+.tooltip-block{
+  z-index: 99;
+  position: relative;
+  display: inline-block;
+  @include rem(margin-left, 5px);
+}
+
+.tooltip-item {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-line-height: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $tooltip-background: $white-base;
+  $tooltip-background: #313839;
+  $tooltip-color: $base-font-color;
+  $tooltip-arrow-width: 8px;
+  $tooltip-shadow: 0 2px 2px silver;
+  $tooltip-distance-from-item: 45px;
+  $tooltip-arrow-distance-from-box: -1.3em;
+
+  border: 1px solid $primary-base;
+  border-radius: 20em;
+  color: $primary-base;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  height: 23px;
+  line-height: 1.4;
+  position: relative;
+  text-align: center;
+  width: 23px;
+  z-index: 3;
+
+  &:focus,
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tooltip {
+    @include position(absolute, null -60px $tooltip-distance-from-item 0);
+    background-color: lighten($grey-light, 10%);
+    border-radius: $base-border-radius;
+    box-shadow: $tooltip-shadow;
+    box-shadow: 0 0 20px 0 rgba(36,36,36,0.25);
+    color: $black-base;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin: 0 auto;
+    opacity: 0;
+    padding: 20px;
+    transition: all .3s ease-in-out;
+    text-align: left;
+    width: 300px;
+    visibility: hidden;
+    z-index: 10;
+    margin-right: -85px;
+
+    &::after {
+      @include position(absolute, null 0);
+      border: $tooltip-arrow-width solid transparent;
+      bottom: $tooltip-arrow-distance-from-box;
+      color: lighten($grey-light, 10%);
+      content: "▼";
+      font-size: 1.4em;
+      margin-top: -5px;
+      margin-left: -$tooltip-arrow-width;
+      text-align: center;
+      text-shadow: $tooltip-shadow;
+    }
+  }
+}

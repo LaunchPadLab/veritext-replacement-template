@@ -1,0 +1,38 @@
+body {
+  &.modal-open {
+    overflow: hidden;
+    // Prevent scroll on ios safari
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // Prevent pull-to-refresh on ios chrome
+    overscroll-behavior-y: contain;
+  }
+}
+
+main {
+  position: relative;
+} 
+
+[class*=-block-container]{
+  @include base-padding;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  width: calc(100% - 245px);
+}
+
+@keyframes fade-in{
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
+}
+
+@keyframes fade-out{
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
+}
+
+hr{
+  border: none;
+  border-bottom: 1px solid $grey-light;
+}

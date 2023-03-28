@@ -1,0 +1,5 @@
+// In the rare case that this is applied to an interactive element, show the
+// element temporarily when it receives focus (for keyboard users)
+.visually-hidden:not(:focus):not(:active) {
+  @include visually-hidden;
+}

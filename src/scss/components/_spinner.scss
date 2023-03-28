@@ -1,0 +1,24 @@
+/*-----------------------
+Spinner
+-----------------------*/
+
+.spinner {
+  text-align: center;
+
+  &:after{
+    animation: spin 0.5s linear infinite;
+    border: 3px solid $primary-base;
+    border-radius: 50%;
+    border-top-color: $primary-base;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content:"";
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

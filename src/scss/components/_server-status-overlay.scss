@@ -1,0 +1,13 @@
+/*-----------------------
+Server Status Overlay
+-----------------------*/
+
+.server-status-overlay{
+  background-color: $red-base;
+  color: $white-base;
+  @include position(fixed, 0px 0px null 0px);
+  @include rem(padding, 5px 20px);
+  text-align: center;
+  z-index: 5;
+}
+

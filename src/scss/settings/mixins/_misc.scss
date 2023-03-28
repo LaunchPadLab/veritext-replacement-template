@@ -1,0 +1,16 @@
+// Misc. Stylesheet
+// ========================================
+
+// Visually Hidden Element
+// https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/
+@mixin visually-hidden {
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  padding: 0 !important;
+}

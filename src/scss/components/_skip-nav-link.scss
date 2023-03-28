@@ -1,0 +1,31 @@
+/*-----------------------
+Skip Nav Link
+-----------------------*/
+
+$skip-nav-height: 40px;
+
+#skip-nav-link {
+  align-items: center;
+  color: $white-base;
+  display: flex;
+  justify-content: center;
+  max-height: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+  
+  &:focus {
+    background-color: $primary-base;
+    @include outline-dark;
+    @include rem(height, $skip-nav-height);
+    @include rem(padding, 10px);
+    max-height: 100%;
+    width: 100%;
+    
+    & ~ header, & ~ main {
+      @include rem(top, $skip-nav-height);
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.modal {
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-fade-screen {
+    background-color: rgba(0, 0, 0, 0.65);
+    @include position(fixed, 0 0 0 0);
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    z-index: 9999999;
+  }
+
+  .modal-close {
+    background-color: transparent;
+    border: none;
+    color: $black-base;
+    cursor: pointer;
+    @include position(absolute, 0px 10px null null);
+    @include s-huge;
+
+    &:focus{
+      @include outline-dark;
+    }
+  }
+
+  .modal-inner {
+    background-color: $white-base;
+    box-shadow: none;
+    max-height: calc(100% - 40px);
+    -ms-overflow-style: none;
+    @include grid-container;
+    @include rem(margin, 20px);
+    @include rem(padding, 20px);
+    overflow: auto;
+    position: relative;
+    transition: opacity 0.25s ease;
+
+    @include grid-media($tablet){
+      @include rem(padding, 30px);
+      @include vertical-center;
+      left: 50%;
+      max-height: 650px;
+      max-width: 700px;
+      margin: auto;
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    .button-block{    
+      button, a{
+        @include rem(margin-top, 10px);
+        width: 100%;
+
+        @include grid-media($tablet){
+          width: inherit;
+        }
+
+        & ~ button, & ~ a{
+          @include grid-media($tablet){
+            @include rem(margin-left, 10px);
+          }
+        }
+      }
+    }
+  }
+}

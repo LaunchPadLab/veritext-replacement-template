@@ -7,6 +7,6 @@
 "scripts": {    
    "start": "yarn --cwd fe start",
    "build": "yarn --cwd fe build",
-   "server": "yarn --cwd fe server"
+   "server": "node ./be/server.js"
 }
 }

@@ -1,12 +1,13 @@
 {
-"private": true,
-"workspaces": [
-   "fe", 
-   "be"
-],
-"scripts": {    
-   "start": "yarn --cwd fe start",
-   "build": "yarn --cwd fe build",
-   "server": "node ./be/server.js"
-}
+  "private": true,
+  "workspaces": [
+    "fe",
+    "be"
+  ],
+  "scripts": {
+    "fe:start": "yarn --cwd fe start",
+    "fe:test": "yarn --cwd fe test",
+    "fe:build": "yarn --cwd fe build",
+    "be:server": "node ./be/server.js"
+  }
 }

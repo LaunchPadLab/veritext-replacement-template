@@ -9,7 +9,7 @@
     "fe:test": "yarn --cwd fe test",
     "fe:build": "yarn --cwd fe build",
     "be:server": "node ./be/server.js",
-    "be:dev": "nodemon ./be/server.js",
+    "dev": "nodemon ./be/server.js",
     "prepare": "husky install"
   },
   "devDependencies": {

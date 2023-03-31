@@ -20,6 +20,6 @@ import './commands'
  * https://github.com/cypress-io/cypress/issues/95
  * https://docs.cypress.io/guides/references/best-practices.html#Unnecessary-Waiting
  */
-Cypress.on('window:before:load', win => {
+Cypress.on('window:before:load', (win) => {
   win.fetch = null
 })

@@ -23,6 +23,7 @@ This checklist assumes that the new repo was created using `client-template`.
   - [ ] Search for "LPL" and select "LaunchPadLab/lpl"
   - [ ] Provide "Write" access to LPL
 - [ ] Grant administrative rights to any admin users by following the same process but providing "Admin" access.
+
 #### Branches
 
 - [ ] Create `dev` and `staging` branches from `main`
@@ -32,11 +33,15 @@ This checklist assumes that the new repo was created using `client-template`.
   - [ ] Add the branch name in the "Branch name pattern" input
   - [ ] Select "require pull request reviews before merging"
   - [ ] Select "require status checks to pass before merging"
+
 ## Integrations
 
 ### Sentry
+
 Sentry is a platform that provides error and performance monitoring. See the [Sentry configuration documentation](https://www.notion.so/launchpadlab/Adding-a-Project-to-Sentry-0750dbc7fd854e5d9ff49515f8c19f7e) to configure Sentry for your project.
+
 ### Travis
+
 Travis CI is a continuous integration platform that supports development processes by automatically building and testing code changes.
 
 - [ ] Confirm that repo has been added to [Travis CI](https://travis-ci.com/github/LaunchPadLab)
@@ -57,7 +62,7 @@ Travis CI is a continuous integration platform that supports development process
 - [ ] Add the staging app:
   - [ ] Click "Add app" on the staging phase (labeled "STAGING")
   - [ ] Click "Create new app" (assuming no existing staging app exists)
-  - [ ] Enter the "App name" as: *`github-repo`*`-staging`
+  - [ ] Enter the "App name" as: _`github-repo`_`-staging`
   - [ ] Click "Create app"
   - [ ] Open (click on the app name) the created staging app and, on the "Deploy" tab, in the "Automatic deploys" section:
     - [ ] Select the `staging` branch in the "Choose a branch to deploy" pulldown
@@ -65,7 +70,7 @@ Travis CI is a continuous integration platform that supports development process
 - [ ] (Optional) Add the dev app:
   - [ ] On the `staging` phase click "Add app". Note that one cannot add a development app directly. An app is added to the staging phase and then moved to the development phase.
   - [ ] Click "Create new app" (assuming no existing development app exists)
-  - [ ] Enter the "App name" as: *`github-repo`*`-dev`
+  - [ ] Enter the "App name" as: _`github-repo`_`-dev`
   - [ ] Click "Create app"
   - [ ] On the newly created development app, select the context menu to the right of the "Open app" button and select "Move app to development"
   - [ ] Open (click on the app name) the created development app and, on the "Deploy" tab, in the "Automatic deploys" section:
@@ -79,7 +84,7 @@ Travis CI is a continuous integration platform that supports development process
 - [ ] Add the production app:
   - [ ] Click "Add app" on the production phase (labeled "PRODUCTION")
   - [ ] Click "Create new app" (assuming no existing production app exists)
-  - [ ] Enter the "App name" as: *`github-repo`*`-production`
+  - [ ] Enter the "App name" as: _`github-repo`_`-production`
   - [ ] Click "Create app". Note that production apps are not typically automatically deployed as a safety measure.
 
 ### Configure Access
@@ -88,6 +93,7 @@ Travis CI is a continuous integration platform that supports development process
   - [ ] On the pipeline page in the "Access" tab add any additional team members that need access to the project.
 
 ### Configure Resources
+
 - [ ] For **each** app, configure any resources necessary for the application. Resources typically include:
   - New Relic (production app)
   - Papertrail (production app)
@@ -97,18 +103,21 @@ Resources for each Heroku app are configured on the app's "Resources" tab. Note 
 ### Configure Environment Variables
 
 #### Environment Variables for Pipeline Applications
+
 - [ ] Add config vars from `application.yml` to the respective pipeline app. `figaro-js` provides [built-in functionality](https://github.com/LaunchPadLab/figaro-js/blob/master/docs.md#cli) for this. Note that Figaro will overwrite any existing variable values and should be used with caution. Also note that Heroku also creates environment variables that need not be changed from their defaults nor added to the `application.yml` file.
 - [ ] Optional: Add Heroku remotes for local branches (`git remote add dev <https:…>`). Heroku git URLs may be found in the "App information" section of each app's Settings tab.
 
 #### Environment Variables for Review Apps
+
 - [ ] The environment for Heroku review apps are configured in the `app.json` file, in an `"env"` section that must be added to the file. Here is an example of an `app.json` file with environment variables configured:
+
 ```json
 {
   "name": "my-app",
   "description": "My Application",
   "env": {
     "REACT_APP_API_URL": "https://my-app-api-dev.herokuapp.com/v1/",
-    "REACT_APP_GOOGLE_MAPS_API_KEY": "HTTGff65fDHTvUAuVVfC1a_5q3r1mT4hcMHKP0",
+    "REACT_APP_GOOGLE_MAPS_API_KEY": "HTTGff65fDHTvUAuVVfC1a_5q3r1mT4hcMHKP0"
   },
   "formation": {},
   "addons": [],
@@ -119,4 +128,5 @@ Resources for each Heroku app are configured on the app's "Resources" tab. Note 
   ]
 }
 ```
+
 Alternatively, the review app environment may also be configured within Heroku. Click the REVIEW APPS > Configure > More settings link, select the "Settings" tab and click "Reveal Config Vars".

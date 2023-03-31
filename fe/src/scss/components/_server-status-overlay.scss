@@ -2,7 +2,7 @@
 Server Status Overlay
 -----------------------*/
 
-.server-status-overlay{
+.server-status-overlay {
   background-color: $red-base;
   color: $white-base;
   @include position(fixed, 0px 0px null 0px);
@@ -10,4 +10,3 @@ Server Status Overlay
   text-align: center;
   z-index: 5;
 }
-

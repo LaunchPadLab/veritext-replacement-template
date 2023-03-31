@@ -2,88 +2,92 @@
 // ========================================
 
 // Main Button
-@mixin button{
+@mixin button {
   border-radius: 20em;
   display: inline-block;
   @include font-type($primary-sans-serif, normal, $bold);
   @include rem(padding, 10px);
   @include s-base;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   min-width: 170px;
   position: relative;
   text-align: center;
   text-decoration: none;
   -webkit-appearance: none;
 
-  &:hover{ cursor: pointer; }
+  &:hover {
+    cursor: pointer;
+  }
 
-  &:focus{
+  &:focus {
     border: none;
     @include outline-dark;
     text-decoration: none;
   }
 }
 
-
 // Button Styles
-@each $button in $buttons{
-  $type:        nth($button, 1);
-  $bg-1:        nth($button, 2);
-  $border:      nth($button, 3);
-  $color:       nth($button, 4);
-  $hover-bg:    nth($button, 5);
+@each $button in $buttons {
+  $type: nth($button, 1);
+  $bg-1: nth($button, 2);
+  $border: nth($button, 3);
+  $color: nth($button, 4);
+  $hover-bg: nth($button, 5);
   $hover-color: nth($button, 6);
 
-  .button-#{$type}, a.button-#{$type}{
+  .button-#{$type},
+  a.button-#{$type} {
     background-color: $bg-1;
     border: 1px solid $border;
     color: $color;
     @include button;
 
-    &:hover{
+    &:hover {
       background-color: $hover-bg;
       border: 1px solid $hover-bg;
       color: $hover-color;
     }
 
-    &:active{
+    &:active {
       background-color: $hover-bg;
       border: 1px solid $hover-bg;
       color: darken($hover-color, 5%);
     }
 
-    &:focus{ border: 1px solid $hover-bg; }
+    &:focus {
+      border: 1px solid $hover-bg;
+    }
 
-    &.is-disabled{
+    &.is-disabled {
       background-color: $bg-1;
       color: $color;
       cursor: not-allowed;
       opacity: 0.4;
     }
 
-    &.in-progress{
+    &.in-progress {
       color: transparent;
       pointer-events: none;
       position: relative;
 
-      &:after{
-         animation: spin 0.5s linear infinite;
-         border: 2px solid $color;
-         border-radius: 50%;
-         border-right-color: transparent;
-         border-top-color: transparent;
-         content:"";
-         display: block;
-         height: 20px;
-         @include position(absolute, 10px null null null);
-         margin: 0 calc((100% - 40px)/2);
-         width: 20px;
+      &:after {
+        animation: spin 0.5s linear infinite;
+        border: 2px solid $color;
+        border-radius: 50%;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        content: '';
+        display: block;
+        height: 20px;
+        @include position(absolute, 10px null null null);
+        margin: 0 calc((100% - 40px) / 2);
+        width: 20px;
       }
     }
   }
 
   // Links
-  .link-#{$type}{
+  .link-#{$type} {
     background-color: transparent;
     border: none;
     color: $bg-1;
@@ -95,16 +99,15 @@
     padding: 0px;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       color: $hover-bg;
     }
 
-    &:focus{
+    &:focus {
       @include outline-dark;
     }
   }
 }
-
 
 // Buton Sizes
 .button-small {
@@ -115,5 +118,5 @@
 }
 
 .button-large {
-   @include rem(padding, 15px 12px);
+  @include rem(padding, 15px 12px);
 }

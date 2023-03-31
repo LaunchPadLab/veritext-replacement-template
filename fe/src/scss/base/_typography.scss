@@ -1,7 +1,7 @@
 // Base Typography
 // ========================================
 
-html{
+html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -26,24 +26,53 @@ h6 {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  a{
+  a {
     @include font-type($primary-sans-serif, normal, $regular);
 
-    &:hover{
+    &:hover {
       text-decoration: underline;
     }
   }
 }
 
-h1 { @include rem(font-size, $font-size-base * 2.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.75); } }
-h2 { @include rem(font-size, $font-size-base * 1.75); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.50); } }
-h3 { @include rem(font-size, $font-size-base * 1.50); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 2.25); } }
-h4 { @include rem(font-size, $font-size-base * 1.25); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.5); } }
-h5 { @include rem(font-size, $font-size-base * 1.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.25); } }
-h6 { @include rem(font-size, $font-size-base - 2.00); @include grid-media($tablet){ @include rem(font-size, $font-size-base * 1.00); } }
+h1 {
+  @include rem(font-size, $font-size-base * 2);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 2.75);
+  }
+}
+h2 {
+  @include rem(font-size, $font-size-base * 1.75);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 2.5);
+  }
+}
+h3 {
+  @include rem(font-size, $font-size-base * 1.5);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 2.25);
+  }
+}
+h4 {
+  @include rem(font-size, $font-size-base * 1.25);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 1.5);
+  }
+}
+h5 {
+  @include rem(font-size, $font-size-base * 1);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 1.25);
+  }
+}
+h6 {
+  @include rem(font-size, $font-size-base - 2);
+  @include grid-media($tablet) {
+    @include rem(font-size, $font-size-base * 1);
+  }
+}
 
-
-p{
+p {
   color: $black-base;
   font-weight: normal;
   font-style: normal;
@@ -52,11 +81,13 @@ p{
   @include rem(margin-bottom, 12px);
   line-height: $base-line-loose;
 
-  &:last-child { @include rem(margin-bottom, 0); }
+  &:last-child {
+    @include rem(margin-bottom, 0);
+  }
 }
 
 li,
-dd{
+dd {
   color: $black-base;
   @include font-type($primary-sans-serif, normal, normal);
   @include s-base;
@@ -70,16 +101,23 @@ a {
   @include s-base;
   @include font-type($primary-sans-serif, normal, $bold);
   text-decoration: underline;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
-  &:hover, &:focus  {
+  &:hover,
+  &:focus {
     color: $black-dark;
   }
 }
 
-strong, b { font-weight: $bold; }
-i, em { font-style: italic; }
+strong,
+b {
+  font-weight: $bold;
+}
+i,
+em {
+  font-style: italic;
+}
 
-u{
+u {
   text-decoration: underline;
 }

@@ -14,26 +14,29 @@
 Cypress.Commands.add('login', (email, password) => {
   let userEmail, userPassword
 
-  cy.fixture('user').then(data => {
+  cy.fixture('user').then((data) => {
     userPassword = password || data.password
     userEmail = email || data.email
 
     var log = Cypress.log({
       name: 'login',
-      message: [ email, password ],
+      message: [email, password],
       consoleProps: () => {
         return {
           email: email,
-          password: userPassword
+          password: userPassword,
         }
-      }
+      },
     })
 
-    cy
-      .visit('sign-in', { log: false })
-      .get('input[name$=email]').type(userEmail, { delay: 0, log: false })
-      .get('input[name$=password]').type(`${userPassword}{enter}`, { delay: 0, log: false })
-      .then(() => { log.snapshot().end() })
+    cy.visit('sign-in', { log: false })
+      .get('input[name$=email]')
+      .type(userEmail, { delay: 0, log: false })
+      .get('input[name$=password]')
+      .type(`${userPassword}{enter}`, { delay: 0, log: false })
+      .then(() => {
+        log.snapshot().end()
+      })
   })
 })
 
@@ -42,8 +45,10 @@ Cypress.Commands.add('logout', () => {
     name: 'logout',
   })
 
-  cy
-    .visit('/')
-    .get('*[data-cy="logout-link"]').click({ force: true })
-    .then(() => { log.snapshot().end() })
+  cy.visit('/')
+    .get('*[data-cy="logout-link"]')
+    .click({ force: true })
+    .then(() => {
+      log.snapshot().end()
+    })
 })

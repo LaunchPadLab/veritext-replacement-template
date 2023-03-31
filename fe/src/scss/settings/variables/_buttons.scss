@@ -2,11 +2,38 @@
 // ========================================
 
 $buttons: (
-  (primary,     $primary-base,    $primary-base,    $white-base,   $primary-dark,    $white-base)
-  (primary-outline,     transparent,    $primary-base,    $primary-base,   $primary-base,    $white-base)
-  (secondary,     $secondary-base,    $secondary-base,    $white-base,   $secondary-dark,    $white-base)
-  (secondary-outline,     transparent,    $secondary-base,    $secondary-base,   $secondary-base,    $white-base)
-  (warn,     $red-base,    $red-base,    $white-base,   $red-dark,    $white-base)
-  (warn-outline,     transparent,    $red-base,    $red-base,   $red-base,    $white-base)
-
+  (
+      primary,
+      $primary-base,
+      $primary-base,
+      $white-base,
+      $primary-dark,
+      $white-base
+    )
+    (
+      primary-outline,
+      transparent,
+      $primary-base,
+      $primary-base,
+      $primary-base,
+      $white-base
+    )
+    (
+      secondary,
+      $secondary-base,
+      $secondary-base,
+      $white-base,
+      $secondary-dark,
+      $white-base
+    )
+    (
+      secondary-outline,
+      transparent,
+      $secondary-base,
+      $secondary-base,
+      $secondary-base,
+      $white-base
+    )
+    (warn, $red-base, $red-base, $white-base, $red-dark, $white-base)
+    (warn-outline, transparent, $red-base, $red-base, $red-base, $white-base)
 );

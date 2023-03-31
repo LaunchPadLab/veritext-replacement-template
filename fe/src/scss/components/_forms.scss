@@ -1,7 +1,7 @@
 /*-----------------------
 Fieldset
 -----------------------*/
-fieldset{
+fieldset {
   display: inline-block;
   @include rem(margin-bottom, 18px);
   position: relative;
@@ -11,7 +11,7 @@ fieldset{
 /*-----------------------
 Labels
 -----------------------*/
-label{
+label {
   color: $black-base;
   display: inline-block;
   @include font-type($primary-sans-serif, normal, $semibold);
@@ -19,7 +19,7 @@ label{
   @include rem(margin-bottom, 6px);
   text-align: left;
 
-  i{
+  i {
     font-style: italic;
     font-weight: $regular;
   }
@@ -30,7 +30,7 @@ Inputs
 -----------------------*/
 #{$all-text-inputs},
 select,
-textarea{
+textarea {
   background-color: $white-base;
   border: 1px solid $white-dark;
   border-radius: 2px;
@@ -47,12 +47,12 @@ textarea{
     font: inherit;
   }
 
-  &::placeholder{
+  &::placeholder {
     color: $white-dark;
     font-style: italic;
   }
 
-  &:focus{
+  &:focus {
     border-color: $black-dark;
     outline: none;
   }
@@ -61,7 +61,7 @@ textarea{
 /*-----------------------
 Hidden Input
 -----------------------*/
-.hidden-field{
+.hidden-field {
   height: 0px;
   width: 0px;
 }
@@ -69,8 +69,8 @@ Hidden Input
 // Cypress does not provide a way (or I couldn't find it)
 // to set the value of a hidden input. This is to `hide`
 // the input with type="text"
-.really.hidden-field{
-  input{
+.really.hidden-field {
+  input {
     padding: 0px;
     border: none;
   }
@@ -79,13 +79,13 @@ Hidden Input
 /*-----------------------
 Input Icon
 -----------------------*/
-.icon-label{
+.icon-label {
   position: relative;
-  input{
+  input {
     @include rem(padding-left, 30px);
   }
 
-  i{
+  i {
     @include position(absolute, 12px null null 10px);
     background-repeat: no-repeat;
     background-size: 15px;
@@ -113,17 +113,17 @@ Input Icon
 Textarea
 -----------------------*/
 textarea,
-textarea[type="text"]{
+textarea[type='text'] {
   height: 100px;
   resize: vertical;
 }
 
-.with-character-count{
-  label{
+.with-character-count {
+  label {
     @include rem(padding-right, 108px);
   }
 
-  .character-count{
+  .character-count {
     color: $black-base;
     float: right;
     @include position(absolute, 0px 0px null null);
@@ -131,11 +131,10 @@ textarea[type="text"]{
   }
 }
 
-
 /*-----------------------
 Select
 -----------------------*/
-select{
+select {
   background-image: url('../images/utility-icons/dropdown.svg');
   background-position: right 10px top 50%;
   background-repeat: no-repeat;
@@ -148,7 +147,7 @@ select{
   -moz-appearance: none;
   appearance: none;
 
-  option:disabled{
+  option:disabled {
     color: $grey-light;
     font-style: italic;
   }
@@ -157,10 +156,10 @@ select{
 /*-----------------------
 Checkbox
 -----------------------*/
-.checkbox{
+.checkbox {
   width: 100%;
 
-  label{
+  label {
     cursor: pointer;
     float: right;
     @include rem(margin, 2px 0px 0px);
@@ -169,7 +168,7 @@ Checkbox
   }
 }
 
-input[type="checkbox"]{
+input[type='checkbox'] {
   -webkit-appearance: none;
   appearance: none;
   transition: all 0.3s ease-in-out;
@@ -184,16 +183,16 @@ input[type="checkbox"]{
   display: inline-block;
   @include rem(margin, 0px 8px 0px 0px);
 
-  &:focus{
+  &:focus {
     border-color: $black-base;
     outline: none;
   }
 
-  &:checked{
+  &:checked {
     background-color: $primary-base;
     border-color: $primary-base;
 
-    &:after{
+    &:after {
       background-image: url('../images/utility-icons/checkmark-white.svg');
       background-size: 17px;
       content: '';
@@ -212,32 +211,32 @@ input[type="checkbox"]{
 /*-----------------------
 Radio Buttons
 -----------------------*/
-.radio-buttons{
+.radio-buttons {
   display: block;
   width: 100%;
 
-  .label-input{
+  .label-input {
     display: block;
     margin-bottom: 10px;
   }
 
-  .input-wrapper .row{
+  .input-wrapper .row {
     display: block;
     @include grid-container;
     @include grid-collapse;
     margin-bottom: 0px;
 
-    input[type="radio"]{ 
+    input[type='radio'] {
       position: absolute;
       z-index: -1;
     }
 
-    input[type="radio"]:focus ~ span{
+    input[type='radio']:focus ~ span {
       border-color: $black-base;
-    } 
+    }
 
-    label.radio-button{
-      background-color: $white-base;     
+    label.radio-button {
+      background-color: $white-base;
       border-radius: 3px;
       display: inline-block;
       @include grid-column(6 of 12);
@@ -246,7 +245,7 @@ Radio Buttons
       text-align: center;
     }
 
-    span{
+    span {
       background: $white-base;
       border: 1px solid $grey-base;
       border-radius: 4px;
@@ -258,13 +257,13 @@ Radio Buttons
       padding: 15px;
       width: 100%;
 
-      &:hover{
+      &:hover {
         background-color: lighten($primary-base, 65%);
         transition: all 0.3s ease-in-out;
       }
     }
 
-    input:checked + span{
+    input:checked + span {
       background-color: $primary-base;
       border-color: $primary-base;
       color: $white-base;
@@ -275,27 +274,27 @@ Radio Buttons
 /*-----------------------
 Radio Inputs
 -----------------------*/
-.radio-inputs{
+.radio-inputs {
   width: 100%;
 
-  label{
+  label {
     cursor: pointer;
     line-height: normal;
     display: block;
   }
 
-  span{
+  span {
     color: $black-base;
     display: inline-block;
     @include rem(margin-top, 3px);
     width: calc(100% - 32px);
 
-    p{
+    p {
       white-space: normal;
     }
   }
 
-  input[type="radio"]{
+  input[type='radio'] {
     -webkit-appearance: none;
     appearance: none;
     transition: all 0.3s ease-in-out;
@@ -312,14 +311,14 @@ Radio Inputs
     border-radius: 20em;
     vertical-align: top;
 
-    &:focus{
+    &:focus {
       border-color: $black-base;
       outline: none;
     }
 
-    &:checked{
+    &:checked {
       position: relative;
-      &:after{
+      &:after {
         background-color: $black-base;
         color: $black-base;
         content: '';
@@ -337,42 +336,43 @@ Radio Inputs
   }
 }
 
-
 /*-----------------------
 Error
 -----------------------*/
-.error{
-  input, textarea, select{
+.error {
+  input,
+  textarea,
+  select {
     border: 1px solid $red-base;
 
-    &:focus{
+    &:focus {
       border-color: $black-base;
       outline: none;
     }
   }
 }
 
-.error-message, span.error-message{
+.error-message,
+span.error-message {
   color: $red-base;
   display: inline-block;
   @include rem(margin-top, 4px);
   @include s-tiny;
   transition: all 0.3s ease-in-out;
-  &:first-letter{
+  &:first-letter {
     text-transform: capitalize;
   }
 }
 
-
 /*-----------------------
 Input Tooltip
 -----------------------*/
-.tooltip-trigger:after{
+.tooltip-trigger:after {
   background-color: $grey-light;
   border: 1px solid $white-light;
   border-radius: 50%;
   color: $grey-base;
-  content:"?";
+  content: '?';
   cursor: pointer;
   display: inline-block;
   height: 18px;
@@ -384,36 +384,36 @@ Input Tooltip
   width: 18px;
 }
 
-.tooltip-content{
+.tooltip-content {
   display: none;
   @include rem(margin-bottom, 8px);
 
-  p{
+  p {
     line-height: 1.5;
   }
 
-  &.is-active{ display: block; }
+  &.is-active {
+    display: block;
+  }
 }
-
 
 /*-----------------------
 Uploader
 -----------------------*/
-.fileupload{
-
-  .thumbnail{
+.fileupload {
+  .thumbnail {
     display: inline-block;
     @include rem(margin-right, 15px);
     width: 70px;
     vertical-align: middle;
 
-    img{
+    img {
       border-radius: 50%;
       height: 70px;
     }
   }
 
-  .button-secondary-light{
+  .button-secondary-light {
     @include button;
     overflow: hidden;
     position: relative;
@@ -423,64 +423,63 @@ Uploader
     border: none;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: darken($grey-light, 8%);
     }
   }
 
-  .button-secondary-light>input{
-    position:absolute;
-    top:0;
-    right:0;
-    margin:0;
-    opacity:0;
-    filter:alpha(opacity=0);
-    transform:translate(-300px, 0) scale(4);
+  .button-secondary-light > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
     cursor: pointer;
   }
 }
 
-.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists{
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
   display: none;
 }
 
-.fileupload-preview{
+.fileupload-preview {
   @include rem(margin, 0px 10px);
   @include s-tiny;
   vertical-align: middle;
 }
 
-.fileupload .close{
+.fileupload .close {
   text-decoration: none;
   vertical-align: middle;
   @include s-medium;
 }
 
-
 /*-----------------------
 Date Picker
 -----------------------*/
-.react-datepicker__input-container{
+.react-datepicker__input-container {
   width: 100%;
 }
 
 /*-----------------------
 Color Picker
 -----------------------*/
-.color-picker{
-  .color{
+.color-picker {
+  .color {
     border: 1px solid $white-light;
     height: 20px;
     @include position(absolute, 32px null null 10px);
     width: 20px;
   }
 
-  .hex{
+  .hex {
     @include position(absolute, 35px null null 38px);
   }
 
-
-  .color-input{
+  .color-input {
     @include rem(padding-left, 50px);
   }
 }
@@ -488,23 +487,22 @@ Color Picker
 /*-----------------------
 Button Area
 -----------------------*/
-.button-area{
-
-  button{
+.button-area {
+  button {
     width: 100%;
 
-    @include grid-media($tablet){
+    @include grid-media($tablet) {
       width: inherit;
     }
   }
 
-  a{
+  a {
     display: inline-block;
     @include rem(margin-top, 20px);
     text-align: center;
     width: 100%;
 
-    @include grid-media($tablet){
+    @include grid-media($tablet) {
       @include rem(margin-top, 10px);
       float: right;
       width: inherit;
@@ -512,12 +510,11 @@ Button Area
   }
 }
 
-
 /*-----------------------
 Forms
 -----------------------*/
-form{
-  .row{
+form {
+  .row {
     margin-bottom: 0px;
   }
 }

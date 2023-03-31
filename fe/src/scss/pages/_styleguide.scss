@@ -1,40 +1,40 @@
 /*-----------------------
 Styleguide
 -----------------------*/
-.styleguide{
-  .inputs fieldset{
+.styleguide {
+  .inputs fieldset {
     margin: 0px;
   }
 
-  h5:not(:first-child){
+  h5:not(:first-child) {
     @include rem(margin-top, 20px);
   }
 
-  .styleguide-sidebar{
-    .side-navigation{
+  .styleguide-sidebar {
+    .side-navigation {
       margin-top: 0px;
       position: relative;
     }
   }
-  .styleguide-header{
-    .navigation{
+  .styleguide-header {
+    .navigation {
       position: relative;
       z-index: 0;
     }
   }
 
-  .panel-card .panel{
+  .panel-card .panel {
     position: relative;
   }
 
-  &.content{
-    &.with-sidebar{
-        margin-left: 245px;
-        width: calc(100% - 245px);
+  &.content {
+    &.with-sidebar {
+      margin-left: 245px;
+      width: calc(100% - 245px);
 
-      .content-block-container{
-        .card{
-          @include grid-media($tablet){
+      .content-block-container {
+        .card {
+          @include grid-media($tablet) {
             float: none;
             max-width: none;
             width: 100%;
@@ -44,32 +44,32 @@ Styleguide
     }
   }
 
-  .card .content-container{
+  .card .content-container {
     width: 100%;
   }
 
-  .content-container.with-horizontal-cards{
+  .content-container.with-horizontal-cards {
     margin: 0px;
     width: 100%;
     padding: 0px;
 
-    .horizontal-cards{
+    .horizontal-cards {
       min-height: 0px;
     }
   }
 }
 
-.code-header{
+.code-header {
   border-bottom: 1px solid $grey-light;
   @include rem(margin-bottom, 20px);
   @include rem(padding-bottom, 20px);
 
-  &:not(:first-child){
+  &:not(:first-child) {
     @include rem(margin-top, 60px);
   }
 }
 
-code{
+code {
   background-color: rgba(lighten($grey-base, 25%), 0.5);
   border-radius: 5px;
   display: inline-block;
@@ -77,8 +77,7 @@ code{
   white-space: pre-wrap;
 }
 
-
-.styleguide-flash{
+.styleguide-flash {
   height: 50px;
 
   .flash-message {
@@ -87,24 +86,23 @@ code{
   }
 }
 
-
-.styleguide-card{
+.styleguide-card {
   border-top: 1px solid $grey-light;
   @include rem(margin, 40px);
   @include rem(padding-top, 40px);
 }
 
-.styleguide{
-  button ~ button{
+.styleguide {
+  button ~ button {
     @include rem(margin-left, 10px);
   }
 }
 
-.styleguide{
-  .modal-fade-screen{
+.styleguide {
+  .modal-fade-screen {
     position: relative;
 
-    .modal-inner{
+    .modal-inner {
       position: relative;
       transform: none;
       top: 0px;
@@ -113,9 +111,9 @@ code{
   }
 }
 
-.styleguide{
-  .styleguide-table{
-    tr{
+.styleguide {
+  .styleguide-table {
+    tr {
       border-bottom: 1px solid $grey-light;
 
       h1,
@@ -123,68 +121,100 @@ code{
       h3,
       h4,
       h5,
-      h6{
+      h6 {
         margin: 0px;
       }
     }
   }
 }
 
-.styleguide{
-  .flash-message{
+.styleguide {
+  .flash-message {
     position: relative;
-
   }
-    .flash-message-container ~ .flash-message-container{
-      @include rem(margin-top, 10px);
-    }
+  .flash-message-container ~ .flash-message-container {
+    @include rem(margin-top, 10px);
+  }
 }
 
 /*-----------------------
 Color Blocks
 -----------------------*/
 
-.color-block{
+.color-block {
   display: inline-block;
   width: 150px;
   background-color: $white-base;
   border-radius: 3px;
   border: 1px solid $grey-light;
 
-  .color{
+  .color {
     border-radius: 3px 3px 0px 0px;
     border-bottom: 1px solid $grey-light;
     height: 80px;
 
-    &.primary-base { background-color: $primary-base }
-    &.primary-dark { background-color: $primary-dark }
-    &.secondary-base { background-color: $secondary-base }
-    &.secondary-dark { background-color: $secondary-dark }
+    &.primary-base {
+      background-color: $primary-base;
+    }
+    &.primary-dark {
+      background-color: $primary-dark;
+    }
+    &.secondary-base {
+      background-color: $secondary-base;
+    }
+    &.secondary-dark {
+      background-color: $secondary-dark;
+    }
 
-    &.red-light { background-color: $red-light }
-    &.red-base { background-color: $red-base }
-    &.red-dark { background-color: $red-dark }
-    &.green-light { background-color: $green-light }
-    &.green-base { background-color: $green-base }
-    &.green-dark { background-color: $green-dark }
-    &.white-base { background-color: $white-base }
-    &.grey-light { background-color: $grey-light }
-    &.grey-base { background-color: $grey-base }
-    &.grey-dark { background-color: $grey-dark }
-    &.black-base { background-color: $black-base }
-    &.black-dark { background-color: $black-dark }
+    &.red-light {
+      background-color: $red-light;
+    }
+    &.red-base {
+      background-color: $red-base;
+    }
+    &.red-dark {
+      background-color: $red-dark;
+    }
+    &.green-light {
+      background-color: $green-light;
+    }
+    &.green-base {
+      background-color: $green-base;
+    }
+    &.green-dark {
+      background-color: $green-dark;
+    }
+    &.white-base {
+      background-color: $white-base;
+    }
+    &.grey-light {
+      background-color: $grey-light;
+    }
+    &.grey-base {
+      background-color: $grey-base;
+    }
+    &.grey-dark {
+      background-color: $grey-dark;
+    }
+    &.black-base {
+      background-color: $black-base;
+    }
+    &.black-dark {
+      background-color: $black-dark;
+    }
   }
 
-  .text-block{
+  .text-block {
     padding: 10px;
     //background-color: $green-light;
 
-    h6, p{
+    h6,
+    p {
       margin: 0px;
       text-align: center;
     }
 
-    p{
+    p {
       @include s-tiny;
     }
   }
@@ -195,16 +225,16 @@ Styleguide Side Navigation
 -----------------------*/
 $side-navigation-styleguide: 250px;
 
-.side-navigation-styleguide{
+.side-navigation-styleguide {
   background-color: $white-base;
-  box-shadow: 0 0 18px 0 rgba(232,232,232,0.50);
+  box-shadow: 0 0 18px 0 rgba(232, 232, 232, 0.5);
   @include position(fixed, 0px null 0px 0px);
   @include rem(padding, 0px 30px 30px);
   overflow: scroll;
   width: $side-navigation-styleguide;
   z-index: 1;
 
-  h5{
+  h5 {
     border-bottom: 1px solid $grey-light;
     @include rem(padding, 21px 0px);
     overflow: hidden;
@@ -212,7 +242,7 @@ $side-navigation-styleguide: 250px;
     white-space: nowrap;
   }
 
-  a{
+  a {
     display: inline-block;
     @include font-type($primary-sans-serif, normal, $bold);
     @include rem(margin-bottom, 10px);

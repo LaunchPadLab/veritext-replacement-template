@@ -2,14 +2,14 @@
 Column Width
 -----------------------*/
 
-.row{
+.row {
   display: inline-block;
   @include rem(margin-bottom, 20px);
   width: 100%;
 
   @for $i from 1 through 12 {
     .col-#{$i} {
-      @include grid-media($tablet){
+      @include grid-media($tablet) {
         @include grid-column($i of 12);
       }
     }

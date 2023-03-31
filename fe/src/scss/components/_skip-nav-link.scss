@@ -15,7 +15,7 @@ $skip-nav-height: 40px;
   text-align: center;
   width: 100%;
   z-index: 99;
-  
+
   &:focus {
     background-color: $primary-base;
     @include outline-dark;
@@ -23,8 +23,9 @@ $skip-nav-height: 40px;
     @include rem(padding, 10px);
     max-height: 100%;
     width: 100%;
-    
-    & ~ header, & ~ main {
+
+    & ~ header,
+    & ~ main {
       @include rem(top, $skip-nav-height);
     }
   }

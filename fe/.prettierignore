@@ -1,7 +1,0 @@
-coverage/*
-build/*
-config/*
-node_modules/*
-public/*
-scripts/*
-server.js

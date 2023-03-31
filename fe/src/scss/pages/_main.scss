@@ -12,9 +12,9 @@ body {
 
 main {
   position: relative;
-} 
+}
 
-[class*=-block-container]{
+[class*='-block-container'] {
   @include base-padding;
   max-width: 1200px;
   margin: 0 auto;
@@ -22,17 +22,25 @@ main {
   width: calc(100% - 245px);
 }
 
-@keyframes fade-in{
-  0%{ opacity: 0; }
-  100%{ opacity: 1; }
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes fade-out{
-  0%{ opacity: 0; }
-  100%{ opacity: 1; }
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-hr{
+hr {
   border: none;
   border-bottom: 1px solid $grey-light;
 }

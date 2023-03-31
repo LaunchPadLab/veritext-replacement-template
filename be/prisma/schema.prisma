@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// MODELS
+// Refrence https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#default
+
+// User
+
+model User {
+  id    String     @id @default(uuid())
+  admin Boolean @default(false)
+  activities Activity[]
+}
+
+// Activity
+
+model Activity {
+  id        String      @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id])
+  userId String   @unique
+  activityType ActivityType
+  actionableType ActionableType
+}
+
+
+// Folder
+
+model Folder {
+  id       String     @id @default(uuid())
+  name String
+  path String
+  repository Repository
+  permissions PermissionRule[]
+}
+
+// Permissions
+
+model PermissionRule {
+  id       String      @id @default(uuid())
+  folder  Folder   @relation(fields: [folderId], references: [id])
+  folderId String
+  actionType ActionType
+}
+
+enum ActionType {
+  CREATE
+  VIEW
+  DELETE
+}
+
+// File
+
+model File {
+  id       String    @id @default(uuid())
+  parentFolderId Int
+  repository Repository
+  name String
+  url String
+  sequence Int
+  path String
+}
+
+// ENUMS
+
+//  File, Folder
+enum Repository {
+  VAULT
+  EXHIBIT_SHARE
+}
+
+// Activity
+enum ActionableType {
+  FILE
+  FOLDER
+}
+
+// PermissionRule
+enum ActivityType {
+  CREATED
+  VIEWED
+  DOWNLOADED
+  MOVED
+  DELETED
+  RENAMED
+}

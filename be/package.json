@@ -6,5 +6,8 @@
   },
   "dependencies": {
     "@veritext-replacement-template/fe": "1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }

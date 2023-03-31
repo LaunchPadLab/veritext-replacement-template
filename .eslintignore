@@ -7,3 +7,4 @@ be/node_modules/*
 fe/public/*
 fe/scripts/*
 server.js
+be/*

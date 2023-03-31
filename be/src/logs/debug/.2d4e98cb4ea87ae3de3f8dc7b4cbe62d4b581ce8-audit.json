@@ -1,0 +1,15 @@
+{
+  "keep": {
+    "days": false,
+    "amount": 30
+  },
+  "auditLog": "/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/src/logs/debug/.2d4e98cb4ea87ae3de3f8dc7b4cbe62d4b581ce8-audit.json",
+  "files": [
+    {
+      "date": 1680283470991,
+      "name": "/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/src/logs/debug/2023-03-31.log",
+      "hash": "47469af57a8e4db5544727a2111eb9f0929f986923a8142128e50f379d17f159"
+    }
+  ],
+  "hashType": "sha256"
+}

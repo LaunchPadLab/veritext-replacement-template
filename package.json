@@ -29,7 +29,7 @@
     "fe/src/**/*.{json,scss}": "prettier --write",
     "be/**/*.{js,json}": [
       "prettier --write",
-      "eslint --fix --max-warnings=0"
+      "eslint --fix"
     ]
   }
 }

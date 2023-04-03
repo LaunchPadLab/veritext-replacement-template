@@ -1,7 +1,10 @@
 # Veritext Replacement Template
 
-`yarn install`
-`yarn start`
+## Repository Setup
+
+`cp fe/config/application.template.yml fe/config/application.yml`
+`yarn`
+`yarn dev`
 
 ## Features
 

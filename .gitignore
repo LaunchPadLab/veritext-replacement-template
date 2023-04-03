@@ -1,3 +1,4 @@
 /build
 /node_modules
 /be/.env
+/be/**/logs/*

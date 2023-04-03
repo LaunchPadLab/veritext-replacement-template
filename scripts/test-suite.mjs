@@ -4,10 +4,10 @@ async function main () {
   try {
     // Build project first to ensure .index.js files are up-to-date
     log('Building project...')
-    exec('NODE_ENV=test yarn run build')
+    exec('NODE_ENV=test yarn --cwd fe run build')
 
-    log('Running unit tests...')
-    exec('yarn run test:unit')
+    log('Running unit fe tests...')
+    exec('yarn --cwd fe run test:unit')
 
     log('Running integration tests...')
     const doSeed = !process.argv.includes('no-seed')
@@ -19,14 +19,14 @@ async function main () {
   }
 }
 
-async function runIntegrationTest (port, doSeed) {
+async function runIntegrationTest(port, doSeed) {
   if (doSeed) {
     log('Seeding test database...')
-    exec('yarn run seed:test')
+    exec('yarn --cwd fe run seed:test')
   }
   log('Starting server...')
   // Run server in the background, redirect output to /dev/null
-  exec(`nohup bash -c "PORT=${ port } NODE_ENV=test yarn run server" > /dev/null 2>&1&`)
+  exec(`nohup bash -c "PORT=${port} NODE_ENV=test yarn be:server" > /dev/null 2>&1&`)
   log('Running tests...')
   try {
     exec('yarn run test:integration')

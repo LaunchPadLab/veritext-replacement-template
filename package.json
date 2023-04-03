@@ -11,6 +11,7 @@
     "be:server": "node ./be/server.js",
     "dev": "nodemon ./be/server.js",
     "test:integration": "cypress run",
+    "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install"
   },
   "devDependencies": {

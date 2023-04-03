@@ -2,3 +2,6 @@
 /node_modules
 /be/.env
 /be/**/logs/*
+
+# e2e test output
+nohup.out

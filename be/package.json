@@ -5,9 +5,11 @@
     "server": "node server.js"
   },
   "dependencies": {
+    "@prisma/client": "^4.12.0",
     "@veritext-replacement-template/fe": "1.0.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "prisma": "^4.12.0",
     "winston": "^3.8.2",
     "winston-daily-rotate-file": "^4.7.1"
   },

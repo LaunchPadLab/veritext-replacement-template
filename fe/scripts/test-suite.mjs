@@ -19,14 +19,14 @@ async function main () {
   }
 }
 
-async function runIntegrationTest (port, doSeed) {
+async function runIntegrationTest(port, doSeed) {
   if (doSeed) {
     log('Seeding test database...')
     exec('yarn run seed:test')
   }
   log('Starting server...')
   // Run server in the background, redirect output to /dev/null
-  exec(`nohup bash -c "PORT=${ port } NODE_ENV=test yarn run server" > /dev/null 2>&1&`)
+  exec(`nohup bash -c "PORT=${port} NODE_ENV=test yarn run server"`)
   log('Running tests...')
   try {
     exec('yarn run test:integration')

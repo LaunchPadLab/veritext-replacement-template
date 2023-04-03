@@ -1,14 +1,10 @@
 
 
 import { App } from './app.js';
-// import { AuthRoute } from '@routes/auth.route';
-// import { UserRoute } from '@routes/users.route';
-// import { ValidateEnv } from '@utils/validateEnv';
+import { UserRoute } from './src/routes/user.routes.js';
 
 // ValidateEnv();
 
-const app = new App();
-
-console.log(app)
+const app = new App([new UserRoute()]);
 
 app.listen();

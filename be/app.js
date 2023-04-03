@@ -16,7 +16,7 @@ loadEnv()
 
 export class App {
   // add routes as a parameter
-  constructor() {
+  constructor(routes) {
     const { PORT, NODE_ENV, PROXIED_API_URL, PROXIED_API_TOKEN } = process.env
 
     this.app = express()
@@ -27,7 +27,7 @@ export class App {
 
     this.initializeFrontend()
     this.initializeMiddlewares()
-    // this.initializeRoutes(routes);
+    this.initializeRoutes(routes)
     // this.initializeSwagger();
     this.initializeErrorHandling()
   }
@@ -50,9 +50,11 @@ export class App {
     // Use build folder for static files
     this.app.use(express.static('build'))
     this.app.get('/env', exposeEnvMiddleware(loadPublicEnv))
-    this.app.get('*', (req, res) =>
-      res.sendFile(path.join(__dirname, '../', '/build/index.html'))
-    )
+
+    // TODO ADD ERROR HANDLING FOR UNKNOWN ROUTES
+    // this.app.get('*', (req, res) =>
+    //   res.sendFile(path.join(__dirname, '../', '/build/index.html'))
+    // )
   }
 
   initializeProxy() {
@@ -94,11 +96,12 @@ export class App {
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cookieParser())
   }
-  // initializeRoutes(routes) {
-  //   routes.forEach(route => {
-  //     this.app.use('/', route.router);
-  //   });
-  // }
+
+  initializeRoutes(routes) {
+    routes.forEach((route) => {
+      this.app.use('/api', route.router)
+    })
+  }
 
   initializeSwagger() {
     const options = {

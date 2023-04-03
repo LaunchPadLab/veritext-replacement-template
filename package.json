@@ -8,6 +8,28 @@
     "fe:start": "yarn --cwd fe start",
     "fe:test": "yarn --cwd fe test",
     "fe:build": "yarn --cwd fe build",
-    "be:server": "node ./be/server.js"
+    "be:server": "node ./be/server.js",
+    "dev": "nodemon ./be/server.js",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@launchpadlab/eslint-config": "^2.7.0",
+    "@launchpadlab/prettier-config": "^1.0.0",
+    "eslint": "^8.37.0",
+    "eslint-webpack-plugin": "^4.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7"
+  },
+  "lint-staged": {
+    "fe/src/**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
+    ],
+    "fe/src/**/*.{json,scss}": "prettier --write",
+    "be/**/*.{js,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

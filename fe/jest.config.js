@@ -1,9 +1,4 @@
 module.exports = {
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    '/cypress/',
-  ],
-  setupFiles: [
-    './test/setup.js',
-  ]
+  testPathIgnorePatterns: ['/node_modules/', '/cypress/'],
+  setupFiles: ['./test/setup.js'],
 }

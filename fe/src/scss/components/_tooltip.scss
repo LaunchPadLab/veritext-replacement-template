@@ -2,7 +2,7 @@
 Tooltip
 -----------------------*/
 
-.tooltip-block{
+.tooltip-block {
   z-index: 99;
   position: relative;
   display: inline-block;
@@ -47,7 +47,7 @@ Tooltip
     background-color: lighten($grey-light, 10%);
     border-radius: $base-border-radius;
     box-shadow: $tooltip-shadow;
-    box-shadow: 0 0 20px 0 rgba(36,36,36,0.25);
+    box-shadow: 0 0 20px 0 rgba(36, 36, 36, 0.25);
     color: $black-base;
     font-size: 12px;
     font-weight: normal;
@@ -55,7 +55,7 @@ Tooltip
     margin: 0 auto;
     opacity: 0;
     padding: 20px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     text-align: left;
     width: 300px;
     visibility: hidden;
@@ -67,7 +67,7 @@ Tooltip
       border: $tooltip-arrow-width solid transparent;
       bottom: $tooltip-arrow-distance-from-box;
       color: lighten($grey-light, 10%);
-      content: "▼";
+      content: '▼';
       font-size: 1.4em;
       margin-top: -5px;
       margin-left: -$tooltip-arrow-width;

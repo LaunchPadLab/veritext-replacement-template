@@ -1,0 +1,9 @@
+coverage/*
+build/*
+fe/config/*
+fe/public/*
+fe/scripts/*
+be/server.js
+be/node_modules/*
+fe/node_modules/*
+node_modules/*

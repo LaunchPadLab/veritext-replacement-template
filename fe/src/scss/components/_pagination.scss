@@ -1,20 +1,20 @@
 /*-----------------------
 Pagination
 -----------------------*/
-.pagination{
+.pagination {
   display: table;
   @include rem(margin, 20px auto 0px);
 
-  li{
+  li {
     float: left;
     @include rem(margin, 0px 8px);
     @include s-small;
 
-    &:last-child{
+    &:last-child {
       margin: 0;
     }
 
-    a{
+    a {
       border-radius: 2px;
       color: $black-base;
       float: left;
@@ -24,24 +24,24 @@ Pagination
       width: 35px;
       line-height: 2.3;
 
-      &:hover{
+      &:hover {
         color: $black-dark;
       }
     }
- 
+
     &.active a,
     a:active {
       background-color: $primary-base;
       border-radius: 20em;
       color: $white-base;
 
-      &:hover{
+      &:hover {
         background-color: $primary-dark;
         color: $white-base;
       }
     }
 
-    .delimeter{
+    .delimeter {
       display: block;
       @include rem(padding-top, 6px);
     }
@@ -49,10 +49,10 @@ Pagination
 }
 
 //With Arrows
-@mixin pagination-arrows{
+@mixin pagination-arrows {
   background-position: top;
   background-size: 100%;
-  content:"";
+  content: '';
   display: inline-block;
   height: 16px;
   transition: all 0.3s ease-in-out;
@@ -60,21 +60,21 @@ Pagination
   vertical-align: sub;
 }
 
-.pagination{
-  .next a{
+.pagination {
+  .next a {
     width: auto;
 
-    &:after{
+    &:after {
       background: url('../images/utility-icons/arrow-right.svg') no-repeat;
       @include pagination-arrows;
       @include rem(margin-left, 10px);
-      }
     }
+  }
 
-  .prev a{
+  .prev a {
     width: auto;
 
-    &:before{
+    &:before {
       background: url('../images/utility-icons/arrow-left.svg') no-repeat;
       @include pagination-arrows;
       @include rem(margin-right, 10px);

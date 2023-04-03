@@ -1,32 +1,31 @@
 // Typography Variables
 // ========================================
 
-  // Font Families
+// Font Families
 
-  $primary-sans-serif: 'Open Sans', sans-serif;
+$primary-sans-serif: 'Open Sans', sans-serif;
 
+// Sizes
+$font-size-base: 16px;
 
-  // Sizes
-  $font-size-base: 16px;
+$s-giga: 60px;
+$s-mega: 48px;
 
-  $s-giga:    60px;
-  $s-mega:    48px;
+$s-huge: 36px;
+$s-large: 27px;
+$s-bigger: 22px;
+$s-big: 18px;
+$s-medium: 15.5px;
+$s-base: 13px;
+$s-small: 11px;
+$s-tiny: 10px;
 
-  $s-huge:    36px;
-  $s-large:   27px;
-  $s-bigger:  22px;
-  $s-big:     18px;
-  $s-medium:  15.5px;
-  $s-base:    13px;
-  $s-small:   11px;
-  $s-tiny:    10px;
+// Line Heights
+$base-line-height: $font-size-base * 1.5;
+$base-line-loose: $font-size-base * 1.8;
+$base-line-small: $font-size-base;
 
-  // Line Heights
-  $base-line-height: $font-size-base * 1.5;
-  $base-line-loose: $font-size-base * 1.8;
-  $base-line-small:  $font-size-base;
-
-  // Font Weights
-  $regular: 400;
-  $semibold: 600;
-  $bold: 700;
+// Font Weights
+$regular: 400;
+$semibold: 600;
+$bold: 700;

@@ -1,28 +1,28 @@
 /*-----------------------
 Flash
 -----------------------*/
-.flash-message{
+.flash-message {
   @include position(fixed, 0px 0px null 0px);
   @include rem(padding, 10px 20px);
   z-index: 5;
 
-  p{
+  p {
     font-weight: $bold;
     text-align: center;
   }
 
-  &.success{
+  &.success {
     background-color: $green-light;
 
-    p{
+    p {
       color: $green-dark;
     }
   }
 
-  &.failure{
+  &.failure {
     background-color: $red-light;
 
-    p{
+    p {
       color: $red-dark;
     }
   }

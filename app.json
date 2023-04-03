@@ -1,12 +1,12 @@
 {
-    "name": "veritext-replacement-template",
-    "description": "",
-    "env": {},
-    "formation": {},
-    "addons": [],
-    "buildpacks": [
-      {
-        "url": "heroku/nodejs"
-      }
-    ]
-  }
+  "name": "veritext-replacement-template",
+  "description": "",
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

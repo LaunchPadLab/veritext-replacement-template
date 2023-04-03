@@ -1,5 +1,4 @@
 .modal {
-
   &.is-active {
     opacity: 1;
     visibility: visible;
@@ -21,7 +20,7 @@
     @include position(absolute, 0px 10px null null);
     @include s-huge;
 
-    &:focus{
+    &:focus {
       @include outline-dark;
     }
   }
@@ -38,7 +37,7 @@
     position: relative;
     transition: opacity 0.25s ease;
 
-    @include grid-media($tablet){
+    @include grid-media($tablet) {
       @include rem(padding, 30px);
       @include vertical-center;
       left: 50%;
@@ -48,17 +47,19 @@
       transform: translateY(-50%) translateX(-50%);
     }
 
-    .button-block{    
-      button, a{
+    .button-block {
+      button,
+      a {
         @include rem(margin-top, 10px);
         width: 100%;
 
-        @include grid-media($tablet){
+        @include grid-media($tablet) {
           width: inherit;
         }
 
-        & ~ button, & ~ a{
-          @include grid-media($tablet){
+        & ~ button,
+        & ~ a {
+          @include grid-media($tablet) {
             @include rem(margin-left, 10px);
           }
         }

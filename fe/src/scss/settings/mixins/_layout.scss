@@ -25,7 +25,9 @@ $grey-border: 1px solid $grey-light;
 @mixin base-padding {
   @include rem(padding, 20px);
 
-  @include grid-media($tablet) { @include rem(padding, 30px); }
+  @include grid-media($tablet) {
+    @include rem(padding, 30px);
+  }
 }
 
 @mixin vertical-center {
@@ -46,7 +48,9 @@ $grey-border: 1px solid $grey-light;
   transform: translateY(-50%) translateX(-50%);
 }
 
-img { width: 100%; }
+img {
+  width: 100%;
+}
 
 @mixin clickable-block {
   display: inline-block;
@@ -56,29 +60,33 @@ img { width: 100%; }
 
 @mixin mobile-hide {
   display: none;
-  @include grid-media($tablet) { display: block; }
+  @include grid-media($tablet) {
+    display: block;
+  }
 }
 
-@mixin desktop-hide{
-  @include grid-media ($tablet){ display: none; }
+@mixin desktop-hide {
+  @include grid-media($tablet) {
+    display: none;
+  }
 }
 
 .horizontal-divider {
   border-bottom: $grey-border;
 }
 
-@mixin ellipsis{
+@mixin ellipsis {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@mixin outline-dark{
+@mixin outline-dark {
   outline: 1px dotted $black-base;
   outline-offset: 2px;
 }
 
-@mixin outline-light{
+@mixin outline-light {
   outline: 1px dotted $white-base;
   outline-offset: 2px;
 }

@@ -8,7 +8,6 @@ import { loadEnv, loadPublicEnv } from '../fe/config/env.js'
 import morgan from 'morgan'
 import { logger, stream } from './src/utils/logger.js'
 import cors from 'cors'
-import * as url from 'url'
 import cookieParser from 'cookie-parser'
 import { ErrorMiddleware } from './src/middlewares/error.middleware.js'
 import swaggerJSDoc from 'swagger-jsdoc'
@@ -107,7 +106,6 @@ export class App {
 
   initializeSwagger() {
     const swaggerPath = path.resolve('be', 'src', 'routes', '*')
-    console.log(swaggerPath)
     const options = {
       definition: {
         openapi: '3.0.0',

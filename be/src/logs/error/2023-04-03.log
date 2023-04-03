@@ -65,3 +65,121 @@ Argument where of type UserWhereUniqueInput needs at least one argument. Availab
 
 Note: Lines with ? are optional.
 
+2023-04-03 09:13:21 error: uncaughtException: swaggerJSDoc is not defined
+ReferenceError: swaggerJSDoc is not defined
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:117:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:31:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)
+2023-04-03 09:31:26 error: uncaughtException: Invalid URL
+TypeError [ERR_INVALID_URL]: Invalid URL
+    at new NodeError (node:internal/errors:393:5)
+    at URL.onParseError (node:internal/url:565:9)
+    at new URL (node:internal/url:645:5)
+    at new URL (node:internal/url:642:22)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:109:41)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+2023-04-03 09:31:31 error: uncaughtException: Invalid URL
+TypeError [ERR_INVALID_URL]: Invalid URL
+    at new NodeError (node:internal/errors:393:5)
+    at URL.onParseError (node:internal/url:565:9)
+    at new URL (node:internal/url:645:5)
+    at new URL (node:internal/url:642:22)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:109:41)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+2023-04-03 09:31:40 error: uncaughtException: Invalid URL
+TypeError [ERR_INVALID_URL]: Invalid URL
+    at new NodeError (node:internal/errors:393:5)
+    at URL.onParseError (node:internal/url:565:9)
+    at new URL (node:internal/url:645:5)
+    at new URL (node:internal/url:642:22)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:109:41)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+2023-04-03 09:50:51 error: uncaughtException: EISDIR: illegal operation on a directory, read
+Error: EISDIR: illegal operation on a directory, read
+    at Object.readSync (node:fs:748:3)
+    at tryReadSync (node:fs:448:20)
+    at Object.readFileSync (node:fs:494:19)
+    at extractAnnotations (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/utils.js:54:26)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:200:9)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:125:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+2023-04-03 09:50:56 error: uncaughtException: Cannot read properties of undefined (reading 'schemas')
+TypeError: Cannot read properties of undefined (reading 'schemas')
+    at organize (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:157:32)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:320:7)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:125:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+2023-04-03 09:52:09 error: uncaughtException: Cannot read properties of undefined (reading 'schemas')
+TypeError: Cannot read properties of undefined (reading 'schemas')
+    at organize (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:157:32)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:320:7)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:125:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+2023-04-03 09:52:32 error: uncaughtException: Cannot read properties of undefined (reading 'schemas')
+TypeError: Cannot read properties of undefined (reading 'schemas')
+    at organize (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:157:32)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:320:7)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:125:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+2023-04-03 09:55:17 error: uncaughtException: EISDIR: illegal operation on a directory, read
+Error: EISDIR: illegal operation on a directory, read
+    at Object.readSync (node:fs:748:3)
+    at tryReadSync (node:fs:448:20)
+    at Object.readFileSync (node:fs:494:19)
+    at extractAnnotations (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/utils.js:54:26)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:200:9)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:124:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)
+2023-04-03 10:10:40 error: uncaughtException: EISDIR: illegal operation on a directory, read
+Error: EISDIR: illegal operation on a directory, read
+    at Object.readSync (node:fs:748:3)
+    at tryReadSync (node:fs:448:20)
+    at Object.readFileSync (node:fs:494:19)
+    at extractAnnotations (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/utils.js:54:26)
+    at build (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/specification.js:200:9)
+    at module.exports (/Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/node_modules/swagger-jsdoc/src/lib.js:32:10)
+    at App.initializeSwagger (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:134:19)
+    at new App (file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/app.js:33:10)
+    at file:///Users/owenroth/Desktop/LPL/projects/veritext-replacement-template/be/server.js:8:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:193:25)

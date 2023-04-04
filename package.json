@@ -15,10 +15,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@launchpadlab/eslint-config": "^2.7.0",
     "@launchpadlab/prettier-config": "^1.0.0",
-    "eslint": "^8.37.0",
-    "eslint-webpack-plugin": "^4.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7"
@@ -30,8 +27,7 @@
     ],
     "fe/src/**/*.{json,scss}": "prettier --write",
     "be/**/*.{js,json}": [
-      "prettier --write",
-      "eslint --fix"
+      "prettier --write"
     ]
   }
 }

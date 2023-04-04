@@ -3,7 +3,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: __dirname + '/fe/config/webpack.config.development.js',
+        config: __dirname + '/config/webpack.config.development.js',
       },
     },
   },

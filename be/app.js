@@ -12,6 +12,7 @@ import cookieParser from 'cookie-parser'
 import { ErrorMiddleware } from './src/middlewares/error.middleware.js'
 import swaggerJSDoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
+import url from 'url'
 
 loadEnv()
 
@@ -26,9 +27,9 @@ export class App {
     this.proxied_api_url = PROXIED_API_URL || ''
     this.proxied_api_token = PROXIED_API_TOKEN || ''
 
+    this.initializeRoutes(routes)
     this.initializeFrontend()
     this.initializeMiddlewares()
-    this.initializeRoutes(routes)
     this.initializeSwagger()
     this.initializeErrorHandling()
   }
@@ -48,14 +49,16 @@ export class App {
 
   initializeFrontend() {
     // Use build folder for static files
-    this.app.use(express.static('build'))
+    if (this.env === 'production') {
+      this.app.use(express.static('build'))
+    }
     this.app.get('/env', exposeEnvMiddleware(loadPublicEnv))
 
     // TODO ADD ERROR HANDLING FOR UNKNOWN ROUTES
-    // const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
-    // this.app.get('*', (req, res) =>
-    //   res.sendFile(path.join(__dirname, '../', '/build/index.html'))
-    // )
+    const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
+    this.app.get('*', (req, res) =>
+      res.sendFile(path.join(__dirname, '../', '/build/index.html'))
+    )
   }
 
   initializeProxy() {

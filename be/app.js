@@ -49,7 +49,9 @@ export class App {
 
   initializeFrontend() {
     // Use build folder for static files
-    this.app.use(express.static('build'))
+    if (this.env === 'production') {
+      this.app.use(express.static('build'))
+    }
     this.app.get('/env', exposeEnvMiddleware(loadPublicEnv))
 
     // TODO ADD ERROR HANDLING FOR UNKNOWN ROUTES

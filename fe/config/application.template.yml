@@ -1,20 +1,42 @@
-# BE
-# PORT
-PORT: 8080
+development:
+  # ENV
+  NODE_ENV: development
 
-# DATABASE
-# DATABASE_URL: mysql://root:password@localhost:3306/dev
+  # FE
+  API_URL: http://localhost:8080/api/v1
 
-# TOKEN
-# SECRET_KEY: secretKey
+  # BE
+  PORT: 8080
 
-# LOG
-LOG_FORMAT: dev
-LOG_DIR: ../logs
+  # LOG
+  LOG_FORMAT: dev
+  LOG_DIR: ../logs
 
-# CORS
-ORIGIN: "*"
-CREDENTIALS: true
+  # CORS
+  ORIGIN: "*"
+  CREDENTIALS: true
 
-# DATABASE
-DATABASE_URL: your-database-url
+  # DATABASE
+  DATABASE_URL: your-local-postgres-url
+
+# production:
+#   # ENV
+#   ENV: production
+
+#   # FE
+#   API_URL:
+
+#   # BE
+#   PORT:
+
+#   # LOG
+#   LOG_FORMAT: dev
+#   LOG_DIR: ../logs
+
+#   # CORS
+#   ORIGIN:
+#   CREDENTIALS: true
+
+#   # DATABASE
+#   DATABASE_URL: your-production-postgres-url
+#   SHADOW_DATABASE_URL: your-production-shadow-postgres-url

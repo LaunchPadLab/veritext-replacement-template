@@ -18,6 +18,7 @@ process.traceDeprecation = true
 
 module.exports = {
   devServer: {
+    port: 3000,
     allowedHosts: 'all',
     client: {
       logging: 'none',
@@ -31,7 +32,6 @@ module.exports = {
     },
     historyApiFallback: true,
     hot: true,
-    port: 'auto',
     // Create API proxy in case we need it.
     proxy: {
       '/proxy': {

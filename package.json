@@ -9,13 +9,14 @@
     "fe:test": "yarn --cwd fe test",
     "fe:build": "yarn --cwd fe build",
     "be:server": "node ./be/server.js",
-    "dev": "nodemon ./be/server.js",
+    "dev": "concurrently \"yarn fe:start\" \"yarn be:server\"",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@launchpadlab/prettier-config": "^1.0.0",
+    "concurrently": "^8.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7"

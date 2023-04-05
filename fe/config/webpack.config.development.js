@@ -18,7 +18,7 @@ process.traceDeprecation = true
 
 module.exports = {
   devServer: {
-    port: 3000,
+    port: process.env.FE_PORT,
     allowedHosts: 'all',
     client: {
       logging: 'none',

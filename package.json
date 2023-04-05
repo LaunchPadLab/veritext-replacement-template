@@ -8,8 +8,9 @@
     "fe:start": "yarn --cwd fe start",
     "fe:test": "yarn --cwd fe test",
     "fe:build": "yarn --cwd fe build",
+    "be:dev": "yarn --cwd be dev",
     "be:server": "node ./be/server.js",
-    "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"nodemon ./be/server.js\"",
+    "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install"

@@ -31,6 +31,40 @@ development:
   # API
   BASE_PATH: /api/v1
   SERVER_STATIC_BUILD: 'false'
+
+test:
+  NODE_ENV: test
+  PROXY_ENFORCE: 'false'
+  PROXIED_API_URL: ''
+  PROXIED_API_TOKEN: ''
+
+  # === FE ===
+  API_URL: http://localhost:8080/api/v1
+  FE_PORT: 3000
+ 
+
+  # === BE ===
+  # PORT
+  PORT: 8080
+
+  # LOG
+  LOG_FORMAT: test
+  LOG_DIR: ../../../tmp
+
+  # CORS
+  ORIGIN: "*"
+  CREDENTIALS: true
+
+  # DATABASE
+  DATABASE_URL: your-local-postgres-url
+
+  # SWAGGER
+  SWAGGER_SERVER_URL: http://localhost:3000
+  SWAGGER_ENDPOINT: /api-docs
+  
+  # API
+  BASE_PATH: /api/v1
+  SERVER_STATIC_BUILD: 'true'
   
 # production:
 #   # ENV

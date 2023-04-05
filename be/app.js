@@ -27,11 +27,11 @@ export class App {
     this.proxied_api_url = PROXIED_API_URL || ''
     this.proxied_api_token = PROXIED_API_TOKEN || ''
 
+    this.initializeMiddlewares()
     this.initializeRoutes(routes)
     this.initializeFrontend()
-    this.initializeMiddlewares()
-    this.initializeSwagger()
     this.initializeErrorHandling()
+    this.initializeSwagger()
   }
 
   listen() {

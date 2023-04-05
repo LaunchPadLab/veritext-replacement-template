@@ -19,26 +19,48 @@ loadEnv()
 export class App {
   // add routes as a parameter
   constructor(routes) {
-    const { PORT, NODE_ENV, PROXIED_API_URL, PROXIED_API_TOKEN } = process.env
+    const {
+      BASE_PATH,
+      CREDENTIALS,
+      LOG_FORMAT,
+      NODE_ENV,
+      ORIGIN,
+      PORT,
+      PROXY_ENFORCE,
+      PROXIED_API_URL,
+      PROXIED_API_TOKEN,
+      SERVER_STATIC_BUILD,
+      SWAGGER_ENDPOINT,
+      SWAGGER_SERVER_URL,
+    } = process.env
 
     this.app = express()
-    this.env = NODE_ENV || 'development'
-    this.port = PORT || 8080
-    this.proxied_api_url = PROXIED_API_URL || ''
-    this.proxied_api_token = PROXIED_API_TOKEN || ''
+    this.BASE_PATH = BASE_PATH
+    this.CREDENTIALS = CREDENTIALS
+    this.LOG_FORMAT = LOG_FORMAT
+    this.NODE_ENV = NODE_ENV
+    this.ORIGIN = ORIGIN
+    this.PORT = PORT
+    this.PROXY_ENFORCE = PROXY_ENFORCE
+    this.PROXIED_API_URL = PROXIED_API_URL
+    this.PROXIED_API_TOKEN = PROXIED_API_TOKEN
+    this.SERVER_STATIC_BUILD = SERVER_STATIC_BUILD
+    this.SWAGGER_ENDPOINT = SWAGGER_ENDPOINT
+    this.SWAGGER_SERVER_URL = SWAGGER_SERVER_URL
 
-    this.initializeRoutes(routes)
-    this.initializeFrontend()
     this.initializeMiddlewares()
-    this.initializeSwagger()
+    this.initializeRoutes(routes)
+    this.initializeProxy()
+    this.initializeFrontend()
     this.initializeErrorHandling()
+    this.initializeSwagger()
   }
 
   listen() {
-    this.app.listen(this.port, () => {
+    this.app.listen(this.PORT, () => {
       logger.info(`=================================`)
-      logger.info(`======= ENV: ${this.env} =======`)
-      logger.info(`🚀 App listening on the port ${this.port}`)
+      logger.info(`======= ENV: ${this.NODE_ENV} =======`)
+      logger.info(`🚀 App listening on the port ${this.PORT}`)
       logger.info(`=================================`)
     })
   }
@@ -49,7 +71,8 @@ export class App {
 
   initializeFrontend() {
     // Use build folder for static files
-    if (this.env === 'production') {
+    if (this.SERVER_STATIC_BUILD === 'true') {
+      logger.info('serving static build')
       this.app.use(express.static('build'))
     }
     this.app.get('/env', exposeEnvMiddleware(loadPublicEnv))
@@ -62,14 +85,17 @@ export class App {
   }
 
   initializeProxy() {
-    if (NODE_ENV === 'production') {
+    const { PROXY_ENFORCE, PROXIED_API_URL, PROXIED_API_TOKEN } = this
+    if (PROXY_ENFORCE === 'true') {
+      logger.info('enforcing ssl')
       this.app.enable('trust proxy')
       this.app.disable('x-powered-by')
       this.app.use(enforceSSL())
     }
 
     // Proxy requests if proxy API url is provided
-    if (PROXIED_API_URL)
+    if (PROXIED_API_URL !== '') {
+      logger.info('created production proxy')
       this.app.use(
         '/proxy',
         createProxyMiddleware({
@@ -82,11 +108,12 @@ export class App {
           },
         })
       )
+    }
   }
 
   initializeMiddlewares() {
     const REJECTED_METHODS = ['TRACE']
-    const { ORIGIN, CREDENTIALS, LOG_FORMAT } = process.env
+    const { CREDENTIALS, LOG_FORMAT, ORIGIN } = this
     this.app.use((req, res, next) => {
       if (REJECTED_METHODS.includes(req.method)) return res.sendStatus(405)
       return next()
@@ -103,7 +130,7 @@ export class App {
 
   initializeRoutes(routes) {
     routes.forEach((route) => {
-      this.app.use('/api/v1', route.router)
+      this.app.use(this.BASE_PATH, route.router)
     })
   }
 
@@ -125,8 +152,8 @@ export class App {
         },
         servers: [
           {
-            url: 'http://localhost:3000',
-            basepath: '/api/v1',
+            url: this.SWAGGER_SERVER_URL,
+            basepath: this.BASE_PATH,
           },
         ],
       },
@@ -134,7 +161,7 @@ export class App {
     }
 
     const specs = swaggerJSDoc(options)
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs))
+    this.app.use(this.SWAGGER_ENDPOINT, swaggerUi.serve, swaggerUi.setup(specs))
   }
 
   initializeErrorHandling() {

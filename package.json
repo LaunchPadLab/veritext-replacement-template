@@ -18,6 +18,7 @@
     "db:gui": "yarn prisma studio",
     "deploy": "yarn && yarn fe:build && yarn db:migrate:prod && yarn be:server",
     "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
+    "setup": "yarn && cp fe/config/application.template.yml fe/config/application.yml",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install"

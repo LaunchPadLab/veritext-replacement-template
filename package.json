@@ -10,16 +10,17 @@
     "fe:build": "yarn --cwd fe build",
     "be:dev": "yarn --cwd be dev",
     "be:server": "node ./be/server.js",
-    "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
-    "test:integration": "cypress run",
-    "test": "yarn && node scripts/test-suite.mjs",
-    "prepare": "husky install",
     "db:seed": "yarn --cwd be seed",
     "db:generate": "yarn --cwd be generate",
     "db:migrate:dev": "yarn --cwd be migrate:dev",
     "db:migrate:prod": "yarn --cwd be migrate:deploy",
     "db:reset": "yarn --cwd be migrate:reset",
-    "db:gui": "yarn prisma studio"
+    "db:gui": "yarn prisma studio",
+    "deploy": "yarn && yarn fe:build && yarn db:migrate:prod && yarn be:server",
+    "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
+    "test:integration": "cypress run",
+    "test": "yarn && node scripts/test-suite.mjs",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@launchpadlab/prettier-config": "^1.0.0",

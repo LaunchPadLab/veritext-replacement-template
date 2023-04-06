@@ -22,6 +22,7 @@ before_script:
   - cp -n fe/config/application.template.yml fe/config/application.yml
   - cp -n be/prisma/.env.template be/prisma/.env
   - prisma generate
+  - yarn db:push
   - yarn db:migrate:prod
   - yarn db:seed
 

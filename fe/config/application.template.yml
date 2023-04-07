@@ -69,7 +69,7 @@ test:
 production:
   NODE_ENV: production
   ENV: production
-  PROXY_ENFORCE: 'true'
+  PROXY_ENFORCE: false
   PROXIED_API_URL: ''
   PROXIED_API_TOKEN: ''
 

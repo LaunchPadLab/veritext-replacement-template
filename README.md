@@ -7,14 +7,6 @@
     - `application.yml` - Application enviromental variables for both `fe` and `be` configuration
 - `be` - Backend
   - `prisma` - Postgres ORM
-
-## Requirements
-
-- NodeJS ^18.12.1
-- Yarn ^1.22.10
-- Postgres ^14.2
-- Prisma ^2.29.1
-
 ## Getting Started
 
 1. Clone the repo

@@ -15,7 +15,7 @@
     "db:migrate:dev": "yarn --cwd be migrate:dev",
     "db:migrate:prod": "yarn --cwd be migrate:deploy",
     "db:reset": "yarn --cwd be migrate:reset",
-    "db:gui": "yarn prisma studio",
+    "db:gui": "yarn --cwd be gui",
     "deploy": "yarn && yarn fe:build && yarn db:migrate:prod && yarn be:server",
     "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
     "setup": "yarn && cp fe/config/application.template.yml fe/config/application.yml",

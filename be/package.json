@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon server.js",
-    "server": "node server.js",
-    "seed": "node prisma/seed.js",
     "generate": "prisma generate",
+    "gui": "yarn prisma studio",
     "migrate:dev": "prisma migrate dev",
     "migrate:reset": "prisma migrate reset",
-    "migrate:deploy": "prisma migrate deploy"
+    "migrate:deploy": "prisma migrate deploy",
+    "server": "node server.js",
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^4.12.0",

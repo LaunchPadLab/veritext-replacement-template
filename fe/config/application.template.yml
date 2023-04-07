@@ -88,9 +88,8 @@ production:
   ORIGIN: "*" # we'll want to limit CORS in prod once we have a domain
   CREDENTIALS: true
 
-  # SWAGGER
-  SWAGGER_SERVER_URL: http://localhost:3000
-  SWAGGER_ENDPOINT: /api-docs
+  # SWAGGER_SERVER_URL: http://localhost:3000
+  # SWAGGER_ENDPOINT: /api-docs
 
   # API
   BASE_PATH: /api/v1

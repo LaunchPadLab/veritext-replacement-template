@@ -18,6 +18,7 @@
 ## Resources
 
 - [Prisma](https://www.prisma.io/)
+- [Prisma Migrations](prisma.io/docs/concepts/components/prisma-migrate/migrate-development-production)
 - [Backend-Bolierplate](https://github.com/ljlm0402/typescript-express-starter/blob/master/lib/prisma)
 - [Frontend-Bolierplate](https://github.com/LaunchPadLab/client-template)
 

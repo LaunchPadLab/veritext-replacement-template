@@ -67,23 +67,35 @@ test:
   SERVER_STATIC_BUILD: 'true'
 
 production:
-  # ENV
   NODE_ENV: production
   ENV: production
+  PROXY_ENFORCE: 'true'
+  PROXIED_API_URL: ''
+  PROXIED_API_TOKEN: ''
 
-  # FE
-  API_URL:
+  # === FE ===
+  API_URL: http://localhost:8080/api/v1 # I think we'd want a base domain in prod?
+  FE_PORT: 3000
 
-  # BE
+  # === BE ===
+  # PORT
   PORT: 8080
 
   # LOG
-  LOG_FORMAT: dev
-  LOG_DIR: ../logs
+  LOG_FORMAT: prod
+  LOG_DIR: ../../../tmp
 
   # CORS
-  ORIGIN:
+  ORIGIN: "*" # we'll want to limit CORS in prod once we have a domain
   CREDENTIALS: true
+
+  # SWAGGER
+  SWAGGER_SERVER_URL: http://localhost:3000
+  SWAGGER_ENDPOINT: /api-docs
+
+  # API
+  BASE_PATH: /api/v1
+  SERVER_STATIC_BUILD: 'true'
 
   # DATABASE
   DATABASE_URL: your-production-postgres-url

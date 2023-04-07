@@ -10,7 +10,7 @@
     "fe:build": "yarn --cwd fe build",
     "be:dev": "yarn --cwd be dev",
     "be:server": "node ./be/server.js",
-    "deploy": "yarn && yarn fe:build && yarn be:server",
+    "deploy": "yarn && NODE_ENV=production yarn fe:build && NODE_ENV=production yarn be:server",
     "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",

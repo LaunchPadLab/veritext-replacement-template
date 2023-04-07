@@ -7,7 +7,7 @@ development:
   # === FE ===
   API_URL: http://localhost:8080/api/v1
   FE_PORT: 3000
- 
+
 
   # === BE ===
   # PORT
@@ -27,7 +27,7 @@ development:
   # SWAGGER
   SWAGGER_SERVER_URL: http://localhost:3000
   SWAGGER_ENDPOINT: /api-docs
-  
+
   # API
   BASE_PATH: /api/v1
   SERVER_STATIC_BUILD: 'false'
@@ -41,7 +41,7 @@ test:
   # === FE ===
   API_URL: http://localhost:8080/api/v1
   FE_PORT: 3000
- 
+
 
   # === BE ===
   # PORT
@@ -61,29 +61,30 @@ test:
   # SWAGGER
   SWAGGER_SERVER_URL: http://localhost:3000
   SWAGGER_ENDPOINT: /api-docs
-  
+
   # API
   BASE_PATH: /api/v1
   SERVER_STATIC_BUILD: 'true'
-  
-# production:
-#   # ENV
-#   ENV: production
 
-#   # FE
-#   API_URL:
+production:
+  # ENV
+  NODE_ENV: production
+  ENV: production
 
-#   # BE
-#   PORT:
+  # FE
+  API_URL:
 
-#   # LOG
-#   LOG_FORMAT: dev
-#   LOG_DIR: ../logs
+  # BE
+  PORT: 8080
 
-#   # CORS
-#   ORIGIN:
-#   CREDENTIALS: true
+  # LOG
+  LOG_FORMAT: dev
+  LOG_DIR: ../logs
 
-#   # DATABASE
-#   DATABASE_URL: your-production-postgres-url
-#   SHADOW_DATABASE_URL: your-production-shadow-postgres-url
+  # CORS
+  ORIGIN:
+  CREDENTIALS: true
+
+  # DATABASE
+  DATABASE_URL: your-production-postgres-url
+  SHADOW_DATABASE_URL: your-production-shadow-postgres-url

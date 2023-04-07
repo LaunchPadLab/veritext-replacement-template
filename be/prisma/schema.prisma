@@ -23,24 +23,28 @@ model User {
 }
 
 model Folder {
-  id   String     @id @default(uuid())
-  parentFolder Folder? @relation("folder", fields: [parentFolderId], references: [id])
-  folder Folder[] @relation("folder")
-  parentFolderId String?
+  id   Int    @id @default(autoincrement())
+  parentFolderId Int?
+  parentFolder Folder? @relation("folderTree", fields: [parentFolderId], references: [id], onDelete: Cascade)
+  subFolders Folder[] @relation("folderTree")
   repository Repository
   name  String
   path String
   files File[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model File {
-  id   String     @id @default(uuid())
-  folder Folder @relation(fields: [parentFolderId], references: [id])
-  parentFolderId String
+  id   Int     @id @default(autoincrement())
+  folder Folder @relation(fields: [folderId], references: [id], onDelete: Cascade)
+  folderId Int
   repository Repository
   name  String
   path String
   url String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ENUMS

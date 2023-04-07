@@ -74,8 +74,7 @@ production:
   PROXIED_API_TOKEN: ''
 
   # === FE ===
-  API_URL: http://localhost:8080/api/v1 # I think we'd want a base domain in prod?
-  FE_PORT: 3000
+  API_URL: /api/v1
 
   # === BE ===
   # PORT

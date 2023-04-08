@@ -1,15 +1,15 @@
 import prisma from '../prismaClient.js'
 import {
-  parrentFolders,
+  parentFolders,
   homeSubFolders,
   privateSubFolders,
   caseSubFolders,
 } from '../data/folders.js'
 
 const folderSeeder = async () => {
-  console.log('seeding parrent folders')
+  console.log('seeding parent folders')
   await prisma.folder.createMany({
-    data: parrentFolders,
+    data: parentFolders,
   })
 
   await createHomeSubFolders()

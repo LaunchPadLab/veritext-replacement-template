@@ -1,4 +1,4 @@
-const parrentFolders = [
+const parentFolders = [
   {
     name: 'Home',
     repository: 'VAULT',
@@ -60,4 +60,4 @@ const caseSubFolders = [
   },
 ]
 
-export { parrentFolders, homeSubFolders, privateSubFolders, caseSubFolders }
+export { parentFolders, homeSubFolders, privateSubFolders, caseSubFolders }

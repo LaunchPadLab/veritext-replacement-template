@@ -11,9 +11,13 @@
 
 1. Clone the repo
 2. `yarn setup`
-3. Configure `fe/config/application.yml` with your own values
-4. `prisma migrate dev`
-5. `yarn dev`
+3. Configure `fe/config/application.yml` with your own local postgres connection url like `postgresql://username@localhost:5432/veritext_replacement`
+4. Due to the way prisma loads env variables in development, you will need to make sure your `pg` connection url is set to `DATABASE_URL` in your `.env` file located at `be/prisma/.env`
+5. `yarn db:migrate:dev`
+6. `yarn dev`
+
+### Troubleshooting Prisma
+- If you are having trouble getting your `DATABASE_URL` to work, try running `yarn db:generate` and then `yarn db:migrate:dev` again.
 
 ## Resources
 

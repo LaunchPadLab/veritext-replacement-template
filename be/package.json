@@ -1,6 +1,7 @@
 {
   "name": "be",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nodemon server.js",
     "generate": "prisma generate",

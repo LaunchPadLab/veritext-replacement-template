@@ -1,12 +1,20 @@
 {
   "name": "be",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nodemon server.js",
-    "server": "node server.js"
+    "generate": "prisma generate",
+    "gui": "yarn prisma studio",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:reset": "prisma migrate reset",
+    "migrate:deploy": "prisma migrate deploy",
+    "server": "node server.js",
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^4.12.0",
+    "fe": "1.0.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

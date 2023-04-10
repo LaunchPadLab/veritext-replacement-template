@@ -5,6 +5,7 @@
   "engines": {
     "node": "^18.12.1"
   },
+  "license": "UNLICENSED",
   "scripts": {
     "analyze-bundle": "yarn && yarn generate-bundle-stats && yarn bundle-analyzer-server",
     "build:development": "webpack serve --config ./config/webpack.config.development.js",

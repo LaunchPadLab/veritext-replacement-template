@@ -25,7 +25,7 @@ development:
   DATABASE_URL: your-local-postgres-url
 
   # SWAGGER
-  SWAGGER_SERVER_URL: http://localhost:3000
+  SWAGGER_SERVER_URL: http://localhost:8080
   SWAGGER_ENDPOINT: /api-docs
 
   # API
@@ -59,7 +59,7 @@ test:
   DATABASE_URL: your-local-postgres-url
 
   # SWAGGER
-  SWAGGER_SERVER_URL: http://localhost:3000
+  SWAGGER_SERVER_URL: http://localhost:8080
   SWAGGER_ENDPOINT: /api-docs
 
   # API
@@ -89,7 +89,7 @@ production:
   CREDENTIALS: true
 
   # SWAGGER_SERVER_URL: http://localhost:3000
-  # SWAGGER_ENDPOINT: /api-docs
+  SWAGGER_ENDPOINT: /api-docs
 
   # API
   BASE_PATH: /api/v1

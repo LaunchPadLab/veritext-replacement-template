@@ -51,9 +51,9 @@ export class App {
     this.initializeMiddlewares()
     this.initializeRoutes(routes)
     this.initializeProxy()
+    this.initializeSwagger()
     this.initializeFrontend()
     this.initializeErrorHandling()
-    this.initializeSwagger()
   }
 
   listen() {

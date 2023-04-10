@@ -61,9 +61,15 @@ import { Router } from 'express'
 import { UsersController } from '../controllers/users.controller.js'
 
 export class UserRoute {
-  path = '/users'
-  router = Router()
-  user = new UsersController()
+  static path() {
+    return '/users'
+  }
+  get router() {
+    return Router()
+  }
+  get user() {
+    return new UsersController()
+  }
 
   constructor() {
     this.initializeRoutes()

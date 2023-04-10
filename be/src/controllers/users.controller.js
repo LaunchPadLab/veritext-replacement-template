@@ -1,9 +1,11 @@
 import { UserService } from '../services/user.service.js'
 
 export class UsersController {
-  user = new UserService()
+  static user() {
+    return new UserService()
+  }
 
-  getUsers = async (req, res, next) => {
+  async getUsers(req, res, next) {
     try {
       const findAllUsersData = await this.user.findAllUser()
 
@@ -13,7 +15,7 @@ export class UsersController {
     }
   }
 
-  getUserById = async (req, res, next) => {
+  async getUserById(req, res, next) {
     try {
       const userId = Number(req.params.id)
       const findOneUserData = await this.user.findUserById(userId)
@@ -24,7 +26,7 @@ export class UsersController {
     }
   }
 
-  createUser = async (req, res, next) => {
+  async createUser(req, res, next) {
     try {
       const userData = req.body
       const createUserData = await this.user.createUser(userData)
@@ -35,7 +37,7 @@ export class UsersController {
     }
   }
 
-  updateUser = async (req, res, next) => {
+  async updateUser(req, res, next) {
     try {
       const userId = Number(req.params.id)
       const userData = req.body
@@ -47,7 +49,7 @@ export class UsersController {
     }
   }
 
-  deleteUser = async (req, res, next) => {
+  async deleteUser(req, res, next) {
     try {
       const userId = Number(req.params.id)
       const deleteUserData = await this.user.deleteUser(userId)

@@ -96,5 +96,5 @@ production:
   SERVER_STATIC_BUILD: 'true'
 
   # DATABASE
-  DATABASE_URL: your-production-postgres-url
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/veritext_box
   SHADOW_DATABASE_URL: your-production-shadow-postgres-url

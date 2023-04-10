@@ -154,6 +154,7 @@ module.exports = {
     //  https://stackoverflow.com/questions/64557638/how-to-polyfill-node-core-modules-in-webpack-5
     // for possible solutions, perhaps using https://github.com/Richienb/node-polyfill-webpack-plugin.
     fallback: {
+      url: require.resolve('url/'), 
       fs: false,
       net: false,
       tls: false,

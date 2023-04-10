@@ -7,6 +7,7 @@
     - `application.yml` - Application enviromental variables for both `fe` and `be` configuration
 - `be` - Backend
   - `prisma` - Postgres ORM
+
 ## Getting Started
 
 1. Clone the repo
@@ -18,11 +19,13 @@
 7. `yarn dev`
 
 ### Troubleshooting Prisma
+
 - If you are having trouble getting your `DATABASE_URL` to work, try running `yarn db:generate` and then `yarn db:migrate:dev` again.
 
 ## Setting Up Postgres Locally
 
 If you don't have postgres installed locally, you can use the following commands to get it set up.
+
 ```bash
 brew install postgresql
 brew services start postgresql
@@ -31,6 +34,7 @@ brew services start postgresql
 There are several guides to creating a database using the homebrew cli tool, but the following is a quick guide to get you started with pgAdmin4.
 
 1. Install pgAdmin4
+
 ```bash
 https://www.pgadmin.org/download/pgadmin-4-macos/
 ```
@@ -39,7 +43,7 @@ https://www.pgadmin.org/download/pgadmin-4-macos/
 3. After opening pgAdmin4, you will be prompted to create a "master password". This is the password you will use to login to pgAdmin4. You can just click enter to skip this password step or you can create a password.
 4. Click `Add New Server`
 5. Under the `General` tab, give your database a name in the input field labeled `Name`
-6. Click the `Connection` tab 
+6. Click the `Connection` tab
 7. Under `Host name/address`, enter `localhost`
 8. Under `Port`, enter `5432`
 9. Keep username as `postgres`
@@ -56,8 +60,11 @@ Now you should be taken to the dashboard of your database. If you followed the s
 - [Frontend-Bolierplate](https://github.com/LaunchPadLab/client-template)
 
 ### Notion
+
 - https://www.notion.so/launchpadlab/Dev-Resources-0dddfd58e59148608336bd393aca6a21
+
 ## TODO
+
 - https://app.asana.com/0/1203247162912464/1204350186317579/f
 
 ## Heroku Production Hosted Link

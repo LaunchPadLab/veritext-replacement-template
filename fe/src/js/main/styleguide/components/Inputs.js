@@ -22,30 +22,41 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-1">Label</label>
                 <div className="input-wrapper">
-                  <input type="text" name="" placeholder="Placeholder Text" />
+                  <input
+                    type="text"
+                    name=""
+                    placeholder="Placeholder Text"
+                    id="i-1"
+                  />
                 </div>
               </fieldset>
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-2">Label</label>
                 <div className="input-wrapper">
                   <input
                     type="text"
                     name=""
                     placeholder="Placeholder Text"
                     defaultValue="John Smith"
+                    id="i-2"
                   />
                 </div>
               </fieldset>
             </td>
             <td>
               <fieldset className="error">
-                <label>Label</label>
+                <label htmlFor="i-3">Label</label>
                 <div className="input-wrapper">
-                  <input type="text" name="" placeholder="Placeholder Text" />
+                  <input
+                    type="text"
+                    name=""
+                    placeholder="Placeholder Text"
+                    id="i-3"
+                  />
                 </div>
                 <span className="error-message">Label can't be blank</span>
               </fieldset>
@@ -57,9 +68,10 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-4">Label</label>
                 <div className="input-wrapper">
                   <textarea
+                    id="i-4"
                     name="message"
                     placeholder="Placeholder Text"
                   ></textarea>
@@ -68,9 +80,10 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-5">Label</label>
                 <div className="input-wrapper">
                   <textarea
+                    id="i-5"
                     name="message"
                     placeholder="Placeholder Text"
                     defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -82,9 +95,10 @@ function Inputs() {
             </td>
             <td>
               <fieldset className="error">
-                <label>Label</label>
+                <label htmlFor="i-6">Label</label>
                 <div className="input-wrapper">
                   <textarea
+                    id="i-6"
                     name="message"
                     placeholder="Placeholder Text"
                   ></textarea>
@@ -99,9 +113,9 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-7">Label</label>
                 <div className="input-wrapper">
-                  <select name="time">
+                  <select name="time" id="i-7">
                     <option value="select">Select</option>
                     <option value="afternoon">Option 1</option>
                     <option value="evening">Option 2</option>
@@ -111,9 +125,9 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="i-8">Label</label>
                 <div className="input-wrapper">
-                  <select name="time">
+                  <select name="time" id="i-8">
                     <option value="select" disabled>
                       Select
                     </option>
@@ -125,9 +139,9 @@ function Inputs() {
             </td>
             <td>
               <fieldset className="error">
-                <label>Label</label>
+                <label htmlFor="i-9">Label</label>
                 <div className="input-wrapper">
-                  <select name="time">
+                  <select name="time" id="i-9">
                     <option value="select">Select</option>
                     <option value="afternoon">Option 1</option>
                     <option value="evening">Option 2</option>
@@ -338,7 +352,7 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="fileToUpload">Label</label>
                 <div
                   className="fileupload fileupload-new"
                   data-provides="fileupload"
@@ -350,7 +364,7 @@ function Inputs() {
                   </span>
                   <span className="fileupload-preview"></span>
                   <a
-                    href="#"
+                    href="/#"
                     className="close fileupload-exists"
                     data-dismiss="fileupload"
                   >
@@ -361,7 +375,7 @@ function Inputs() {
             </td>
             <td>
               <fieldset>
-                <label>Label</label>
+                <label htmlFor="fileToUpload2">Label</label>
                 <div
                   className="fileupload fileupload-exists"
                   data-provides="fileupload"
@@ -369,11 +383,11 @@ function Inputs() {
                   <span className="button-secondary-light">
                     <span className="fileupload-new">Select File</span>
                     <span className="fileupload-exists">Change</span>
-                    <input type="file" name="fileToUpload" id="fileToUpload" />
+                    <input type="file" name="fileToUpload" id="fileToUpload2" />
                   </span>
                   <span className="fileupload-preview">File Name Preview</span>
                   <a
-                    href="#"
+                    href="/#"
                     className="close fileupload-exists"
                     data-dismiss="fileupload"
                   >
@@ -384,7 +398,7 @@ function Inputs() {
             </td>
             <td>
               <fieldset className="error">
-                <label>Label</label>
+                <label htmlFor="fileToUpload4">Label</label>
                 <div
                   className="fileupload fileupload-new"
                   data-provides="fileupload"
@@ -392,11 +406,11 @@ function Inputs() {
                   <span className="button-secondary-light">
                     <span className="fileupload-new">Select File</span>
                     <span className="fileupload-exists">Change</span>
-                    <input type="file" name="fileToUpload" id="fileToUpload" />
+                    <input type="file" name="fileToUpload" id="fileToUpload3" />
                   </span>
                   <span className="fileupload-preview"></span>
                   <a
-                    href="#"
+                    href="/#"
                     className="close fileupload-exists"
                     data-dismiss="fileupload"
                   >

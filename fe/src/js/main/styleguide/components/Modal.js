@@ -16,10 +16,10 @@ function Modal() {
               cancel your membership.
             </p>
             <div className="button-block">
-              <a href="#" className="button-primary">
+              <a href="/#" className="button-primary">
                 Yes, Send Cancellation Request
               </a>
-              <a href="#" className="button-primary-outline">
+              <a href="/#" className="button-primary-outline">
                 No, Nevermind!
               </a>
             </div>

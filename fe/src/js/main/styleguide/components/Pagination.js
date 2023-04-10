@@ -8,25 +8,25 @@ function Pagination() {
     <div>
       <ul className="pagination">
         <li className="prev">
-          <a>Prev</a>
+          <a href="/#">Prev</a>
         </li>
         <li>
-          <a>1</a>
+          <a href="/#">1</a>
         </li>
         <li className="active">
-          <a>2</a>
+          <a href="/#">2</a>
         </li>
         <li>
-          <a>3</a>
+          <a href="/#">3</a>
         </li>
         <li>
           <span className="delimiter">...</span>
         </li>
         <li>
-          <a>138</a>
+          <a href="/#">138</a>
         </li>
         <li className="next">
-          <a>Next</a>
+          <a href="/#">Next</a>
         </li>
       </ul>
     </div>

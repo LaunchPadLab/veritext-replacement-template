@@ -30,7 +30,8 @@
     ],
     "fe/src/**/*.{json,scss}": "prettier --write",
     "be/**/*.{js,json}": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
     ]
   }
 }

@@ -1,6 +1,6 @@
 import { exec, log } from './helpers.mjs'
 
-async function main () {
+async function main() {
   try {
     // Build project first to ensure .index.js files are up-to-date
     log('Building project...')
@@ -26,7 +26,9 @@ async function runIntegrationTest(port, doSeed) {
   }
   log('Starting server...')
   // Run server in the background, redirect output to /dev/null
-  exec(`nohup bash -c "PORT=${port} NODE_ENV=test yarn be:server" > /dev/null 2>&1&`)
+  exec(
+    `nohup bash -c "PORT=${port} NODE_ENV=test yarn be:server" > /dev/null 2>&1&`
+  )
   log('Running tests...')
   try {
     exec('yarn run test:integration')
@@ -36,8 +38,8 @@ async function runIntegrationTest(port, doSeed) {
   }
 }
 
-function killNodeServer (port) {
-  return exec(`kill -9 $(lsof -t -i :${ port } -a -c node)`)
+function killNodeServer(port) {
+  return exec(`kill -9 $(lsof -t -i :${port} -a -c node)`)
 }
 
 main()

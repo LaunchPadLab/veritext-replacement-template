@@ -7,8 +7,8 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     babelOptions: {
-      configFile: path.join(__dirname, 'babel.config.json')
-    }
+      configFile: path.join(__dirname, 'babel.config.json'),
+    },
   },
   settings: {
     'import/resolver': {

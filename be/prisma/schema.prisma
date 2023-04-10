@@ -12,83 +12,35 @@ datasource db {
 
 // MODELS
 // Refrence https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#default
-
-// User
-
-model User {
-  id    String     @id @default(uuid())
-  admin Boolean @default(false)
-  activities Activity[]
-}
-
-// Activity
-
-model Activity {
-  id        String      @id @default(uuid())
-  user   User   @relation(fields: [userId], references: [id])
-  userId String   @unique
-  activityType ActivityType
-  actionableType ActionableType
-}
-
-
-// Folder
-
 model Folder {
-  id       String     @id @default(uuid())
-  name String
-  path String
+  id   Int    @id @default(autoincrement())
+  parentFolderId Int?
+  parentFolder Folder? @relation("folderTree", fields: [parentFolderId], references: [id], onDelete: Cascade)
+  subFolders Folder[] @relation("folderTree")
   repository Repository
-  permissions PermissionRule[]
+  name  String
+  path String
+  files File[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
-
-// Permissions
-
-model PermissionRule {
-  id       String      @id @default(uuid())
-  folder  Folder   @relation(fields: [folderId], references: [id])
-  folderId String
-  actionType ActionType
-}
-
-enum ActionType {
-  CREATE
-  VIEW
-  DELETE
-}
-
-// File
 
 model File {
-  id       String    @id @default(uuid())
-  parentFolderId Int
+  id   Int     @id @default(autoincrement())
+  folder Folder @relation(fields: [folderId], references: [id], onDelete: Cascade)
+  folderId Int
   repository Repository
-  name String
-  url String
-  sequence Int
+  name  String
   path String
+  url String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 // ENUMS
 
-//  File, Folder
 enum Repository {
   VAULT
   EXHIBIT_SHARE
 }
 
-// Activity
-enum ActionableType {
-  FILE
-  FOLDER
-}
-
-// PermissionRule
-enum ActivityType {
-  CREATED
-  VIEWED
-  DOWNLOADED
-  MOVED
-  DELETED
-  RENAMED
-}

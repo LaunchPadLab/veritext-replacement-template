@@ -1,4 +1,3 @@
-import { existsSync, mkdirSync } from 'fs'
 import path from 'path'
 import winston from 'winston'
 import winstonDaily from 'winston-daily-rotate-file'
@@ -11,9 +10,9 @@ loadEnv()
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url))
 const logDir = path.join(__dirname, process.env.LOG_DIR)
 
-if (!existsSync(logDir)) {
-  mkdirSync(logDir)
-}
+// if (!existsSync(logDir)) {
+//   mkdirSync(logDir)
+// }
 
 // Define log format
 const logFormat = winston.format.printf(

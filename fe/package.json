@@ -14,6 +14,7 @@
     "format": "prettier --write \"src/**/*.+(js|jsx|json)\"",
     "generate-bundle-stats": "webpack --config config/webpack.config.production.js --profile --json > .webpack-stats.json",
     "lint": "eslint src/ --fix --max-warnings=0",
+    "lint:test": "yarn eslint . --max-warnings=0",
     "seed:test": "echo 'No script specified, seed skipped'",
     "start": "yarn && yarn build:development",
     "test:unit": "jest"
@@ -72,13 +73,10 @@
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
-    "@launchpadlab/eslint-config": "^3.0.1",
     "@launchpadlab/lp-subsection-generator": "^7.2.1",
     "chalk": "^5.2.0",
     "cli-prompt": "^0.6.0",
     "cypress": "^12.1.0",
-    "eslint": "^7.32.0",
-    "eslint-webpack-plugin": "^3.1.1",
     "jest": "^29.3.1",
     "react-dev-utils": "^12.0.1",
     "webpack-bundle-analyzer": "^4.5.0",

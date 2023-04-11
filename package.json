@@ -29,22 +29,22 @@
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install",
-    "lint": "yarn && yarn --cwd be eslint . --config .eslintrc.cjs --max-warnings=0 && yarn --cwd fe eslint . --config .eslintrc.js --max-warnings=0"
+    "lint:ci": "yarn --cwd fe lint:test && yarn --cwd be lint:test"
   },
   "devDependencies": {
+    "@launchpadlab/eslint-config": "^3.0.1",
     "@launchpadlab/prettier-config": "^1.0.0",
     "concurrently": "^8.0.1",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^4.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7"
   },
   "lint-staged": {
-    "fe/src/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix --max-warnings=0"
-    ],
-    "fe/src/**/*.{json,scss}": "prettier --write",
-    "be/**/*.{js,json,cjs}": [
+    "**/*.{js,jsx,scss,yml}": [
       "prettier --write",
       "eslint --fix --max-warnings=0"
     ]

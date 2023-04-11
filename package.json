@@ -28,7 +28,8 @@
     "setup": "yarn && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "yarn && yarn --cwd be eslint . --max-warnings=0 && yarn --cwd fe eslint . --max-warnings=0"
   },
   "devDependencies": {
     "@launchpadlab/prettier-config": "^1.0.0",

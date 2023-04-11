@@ -18,6 +18,13 @@ jobs:
           # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.12.1'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
       - name: Prettify code
         uses: creyD/prettier_action@v4.2
         with:

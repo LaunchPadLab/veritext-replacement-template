@@ -26,7 +26,7 @@
     "deploy": "yarn && NODE_ENV=production yarn fe:build && NODE_ENV=production yarn be:server",
     "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
     "setup": "yarn && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
-    "setup:ci": "yarn --frozen-lockfile --production=false && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
+    "setup:ci": "yarn --frozen-lockfile && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install",

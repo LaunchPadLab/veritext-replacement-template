@@ -27,5 +27,7 @@ jobs:
           # fail if there are ugly files
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}
+      - name: install eslint
+        run: yarn add eslint -W
       - name: Check for eslint errors/warnings
         run:   yarn run eslint . --fix --max-warnings=0 --ext .js,.jsx

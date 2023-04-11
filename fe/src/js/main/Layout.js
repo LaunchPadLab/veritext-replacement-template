@@ -22,14 +22,12 @@ function Layout({ flashMessages, pathname, children }) {
     scrollToTop()
   }, [pathname])
   return (
-    <div style={{ height: '100%' }}>
+    <>
       {!isProduction() && <ServerStatusOverlay />}
       <FlashMessageContainer messages={flashMessages} />
       <SkipNavLink targetId="main-content">Skip to main content</SkipNavLink>
-      <main id="main-content" style={{ height: '100%' }}>
-        {children}
-      </main>
-    </div>
+      <main id="main-content">{children}</main>
+    </>
   )
 }
 

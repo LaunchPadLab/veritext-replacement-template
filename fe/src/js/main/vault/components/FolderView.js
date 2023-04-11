@@ -11,8 +11,8 @@ const defaultProps = {}
 function FolderView({ content }) {
   return (
     <div className="vault__folder-view">
-      {content.map((folderOrFile, index) => {
-        return <div key={index}>{folderOrFile}</div>
+      {content.map((folderOrFile) => {
+        return <div key={folderOrFile.id}>{folderOrFile}</div>
       })}
     </div>
   )

@@ -31,7 +31,7 @@
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install",
     "lint": "yarn eslint --fix --ext .js,.jsx, . && yarn prettier --write .",
-    "lint:test": "yarn eslint --fix --max-warnings=0 ."
+    "lint:ci": "yarn eslint --fix --max-warnings=0 ."
   },
   "devDependencies": {
     "@launchpadlab/eslint-config": "^3.0.1",

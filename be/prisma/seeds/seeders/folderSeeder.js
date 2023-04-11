@@ -6,6 +6,8 @@ import {
   caseSubFolders,
 } from '../data/folders.js'
 
+/* eslint-disable no-console */
+
 const folderSeeder = async () => {
   console.log('seeding parent folders')
   await prisma.folder.createMany({

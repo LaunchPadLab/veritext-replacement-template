@@ -2,7 +2,7 @@ import React from 'react'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 import FileTree from '../components/FileTree'
-import FolderView from '../components/FolderView'
+import FolderContent from '../components/FolderContent'
 
 const propTypes = {}
 
@@ -49,7 +49,7 @@ function Vault() {
   return (
     <>
       <FileTree folders={fileTree.folders} />
-      <FolderView content={fileTree.files} />
+      <FolderContent items={fileTree.files} />
     </>
   )
 }

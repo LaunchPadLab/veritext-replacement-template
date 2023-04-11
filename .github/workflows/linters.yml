@@ -18,8 +18,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn setup:ci
-      - name: Install linters globally (Prettier, Eslint)
-        run: yarn global add eslint prettier
+      # - name: Install linters globally (Prettier, Eslint)
+      #   run: yarn global add eslint prettier
       - name: Check for ugly files (Prettier)
         uses: creyD/prettier_action@v4.2
         with:

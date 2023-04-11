@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import exact from 'prop-types-exact'
+import * as Types from 'types'
 
 const propTypes = {
-  folders: PropTypes.array.isRequired,
+  folders: PropTypes.arrayOf(Types.folder).isRequired,
 }
 
 const defaultProps = {}

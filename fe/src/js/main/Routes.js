@@ -3,7 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import Layout from './Layout'
 import { Routes as HomeRoutes } from './home'
 import { Routes as StyleguideRoutes } from './styleguide'
-import { Routes as VaultRoutes } from './vault/.index'
+import { Routes as VaultRoutes } from './vault'
 
 const propTypes = {}
 const defaultProps = {}

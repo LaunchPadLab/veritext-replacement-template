@@ -22,8 +22,6 @@ jobs:
         with:
           node-version: '18.12.1'
           cache: 'yarn'
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
       - name: Setup
         run: yarn setup
       - name: Check for ugly files (Prettier)

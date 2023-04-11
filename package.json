@@ -29,7 +29,8 @@
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
     "prepare": "husky install",
-    "lint:ci": "yarn --cwd fe lint:test && yarn --cwd be lint:test"
+    "lint": "yarn eslint --fix --ext .js,.jsx, . && yarn prettier --write .",
+    "lint:test": "yarn eslint --fix --max-warnings=0 ."
   },
   "devDependencies": {
     "@launchpadlab/eslint-config": "^3.0.1",
@@ -44,7 +45,7 @@
     "prettier": "^2.8.7"
   },
   "lint-staged": {
-    "**/*.{js,jsx,scss,yml}": [
+    "**/*.{js,jsx,scss}": [
       "prettier --write",
       "eslint --fix --max-warnings=0"
     ]

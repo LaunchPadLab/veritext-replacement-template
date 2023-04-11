@@ -31,6 +31,6 @@ jobs:
         with:
           # fail if there are ugly files
           dry: true
-          prettier_options: --write **/*.{js,md,json,scss,cjs}
+          prettier_options: --write **/*.{js,jsx,scss}
       - name: Check for eslint errors/warnings
-        run: yarn lint
+        run: yarn lint:test

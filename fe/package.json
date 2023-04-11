@@ -13,8 +13,6 @@
     "bundle-analyzer-server": "webpack-bundle-analyzer .webpack-stats.json build/",
     "format": "prettier --write \"src/**/*.+(js|jsx|json)\"",
     "generate-bundle-stats": "webpack --config config/webpack.config.production.js --profile --json > .webpack-stats.json",
-    "lint": "eslint src/ --fix --max-warnings=0",
-    "lint:test": "yarn eslint . --max-warnings=0",
     "seed:test": "echo 'No script specified, seed skipped'",
     "start": "yarn && yarn build:development",
     "test:unit": "jest"

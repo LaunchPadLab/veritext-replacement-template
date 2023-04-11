@@ -15,10 +15,6 @@ module.exports = {
       webpack: {
         config: __dirname + '/config/webpack.config.development.js',
       },
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx'],
-      },
     },
   },
 }

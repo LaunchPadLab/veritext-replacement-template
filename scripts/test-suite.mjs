@@ -22,7 +22,7 @@ async function main() {
 async function runIntegrationTest(port, doSeed) {
   if (doSeed) {
     log('Seeding test database...')
-    exec('yarn --cwd fe run seed:test')
+    exec('yarn --cwd be run seed')
   }
   log('Starting server...')
   // Run server in the background, redirect output to /dev/null

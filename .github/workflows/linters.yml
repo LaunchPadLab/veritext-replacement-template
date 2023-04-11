@@ -6,10 +6,7 @@ on: push
 jobs:
   linters:
     runs-on: ubuntu-latest
-
-    env:
-      NODE_ENV: development
-
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,4 +28,4 @@ jobs:
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}
       - name: Check for eslint errors/warnings
-        run:  eslint --fix --max-warnings=0 .
+        run:   yarn run eslint . --fix --max-warnings=0 --ext .js,.jsx

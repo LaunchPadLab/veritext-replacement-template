@@ -1,4 +1,4 @@
-name: prettier
+name: prettier / eslint
 
 # This action works with pull requests and pushes
 on:
@@ -25,9 +25,11 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn --frozen-lockfile
-      - name: Prettify code
+      - name: Check for ugly files (Prettier)
         uses: creyD/prettier_action@v4.2
         with:
           # fail if there are ugly files
           dry: true
           prettier_options: --write **/*.{js,md,json,scss,cjs}
+      - name: Check for eslint errors/warnings
+        run: yarn lint

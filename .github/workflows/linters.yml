@@ -1,14 +1,10 @@
 name: prettier / eslint
 
 # This action works with pull requests and pushes
-on:
-  pull_request:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  prettier:
+  linters:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +21,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn --frozen-lockfile
+      - name: Setup
+        run: yarn setup
       - name: Check for ugly files (Prettier)
         uses: creyD/prettier_action@v4.2
         with:

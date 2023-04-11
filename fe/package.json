@@ -67,11 +67,12 @@
     "sass": "^1.56.2",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
+    "url": "^0.11.0",
     "webpack": "^5.71.0",
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
-    "@launchpadlab/eslint-config": "^2.7.0",
+    "@launchpadlab/eslint-config": "^3.0.1",
     "@launchpadlab/lp-subsection-generator": "^7.2.1",
     "chalk": "^5.2.0",
     "cli-prompt": "^0.6.0",

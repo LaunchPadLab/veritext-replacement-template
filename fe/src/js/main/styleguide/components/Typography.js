@@ -75,7 +75,7 @@ function Typography() {
               <code>a</code>
             </td>
             <td>
-              <a>The quick brown fox jumps over the lazy dog</a>
+              <a href="/#">The quick brown fox jumps over the lazy dog</a>
             </td>
           </tr>
         </tbody>

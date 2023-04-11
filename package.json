@@ -43,8 +43,9 @@
       "eslint --fix --max-warnings=0"
     ],
     "fe/src/**/*.{json,scss}": "prettier --write",
-    "be/**/*.{js,json}": [
-      "prettier --write"
+    "be/**/*.{js,json,cjs}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
     ]
   }
 }

@@ -3,7 +3,9 @@ import { hash } from 'bcrypt'
 import { HttpException } from '../exceptions/HttpException.js'
 
 export class UserService {
-  user = prisma.user
+  static user() {
+    return prisma.user
+  }
 
   async findAllUser() {
     const allUser = await this.user.findMany()

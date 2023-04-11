@@ -36,5 +36,5 @@ jobs:
         run: yarn setup
       - name: Run prisma deploy
         run: yarn db:migrate:prod
-      - name: Run production build
+      - name: Run tests
         run: yarn test

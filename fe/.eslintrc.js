@@ -16,8 +16,8 @@ module.exports = {
         config: __dirname + '/config/webpack.config.development.js',
       },
       node: {
-        extensions: [".js", ".jsx"]
-      }
+        extensions: ['.js', '.jsx'],
+      },
     },
   },
 }

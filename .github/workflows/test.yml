@@ -38,9 +38,9 @@ jobs:
         run: yarn db:migrate:prod
       - name: Run tests
         run: yarn test
-      - name: Check for ugly files (Prettier)
+      - name: Verify formatting
         uses: creyD/prettier_action@v4.2
         with:
-          # fail if there are ugly files
+          # fail if there are unformatted files
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}

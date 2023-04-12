@@ -27,4 +27,4 @@ jobs:
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}
       - name: Run ESLint
-        run: /home/runner/work/veritext-replacement-template/veritext-replacement-template/node_modules/.bin/eslint --fix --max-warnings=0 .
+        run: node_modules/.bin/eslint --fix --max-warnings=0 .

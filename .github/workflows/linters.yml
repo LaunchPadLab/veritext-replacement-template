@@ -6,7 +6,6 @@ on: push
 jobs:
   linters:
     runs-on: ubuntu-latest
-    working-directory: .
     
     steps:
       - name: Checkout

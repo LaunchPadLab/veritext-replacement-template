@@ -42,4 +42,4 @@ jobs:
         with:
           # fail if there are unformatted files
           dry: true
-          prettier_options: --write **/*.{js,jsx,scss}
+          prettier_options: --write **/*.{js,jsx,scss,json,md}

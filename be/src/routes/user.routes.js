@@ -60,12 +60,16 @@
 import { Router } from 'express'
 import { UsersController } from '../controllers/users.controller.js'
 
+// memoize router so that when the consumers retrieve it via getter,
+// it's not a fresh instance, as that essentially wipes out the routes
+const router = Router()
+
 export class UserRoute {
-  static path() {
+  get path() {
     return '/users'
   }
   get router() {
-    return Router()
+    return router
   }
   get user() {
     return new UsersController()

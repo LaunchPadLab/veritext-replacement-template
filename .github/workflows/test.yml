@@ -43,3 +43,5 @@ jobs:
           # fail if there are unformatted files
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}
+      - name: Verify linting
+        run: yarn lint:ci

@@ -31,10 +31,8 @@ jobs:
           node-version: '18.12.1'
           cache: 'yarn'
           cache-dependency-path: 'yarn.lock'
-      - name: Install dependencies
-        run: yarn --frozen-lockfile
       - name: Run setup script
-        run: yarn setup
+        run: yarn setup:ci
       - name: Run prisma deploy
         run: yarn db:migrate:prod
       - name: Run tests

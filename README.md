@@ -62,11 +62,3 @@ Now you should be taken to the dashboard of your database. If you followed the s
 ### Notion
 
 - https://www.notion.so/launchpadlab/Dev-Resources-0dddfd58e59148608336bd393aca6a21
-
-## TODO
-
-- https://app.asana.com/0/1203247162912464/1204350186317579/f
-
-## Heroku Production Hosted Link
-
-https://veritext-replacement-template.herokuapp.com/home

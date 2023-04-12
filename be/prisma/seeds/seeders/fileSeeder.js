@@ -1,5 +1,7 @@
 import prisma from '../prismaClient.js'
 
+/* eslint-disable no-console */
+
 const getSubFolders = async () => {
   const subFolders = await prisma.folder.findMany({
     where: {

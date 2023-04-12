@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from 'fs'
+import { existsSync, mkdirSync } from 'node:fs'
 import path from 'path'
 import winston from 'winston'
 import winstonDaily from 'winston-daily-rotate-file'

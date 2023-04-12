@@ -26,26 +26,23 @@
     "deploy": "yarn && NODE_ENV=production yarn fe:build && NODE_ENV=production yarn be:server",
     "dev": "concurrently --kill-others --names \"FE,BE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn fe:start\" \"yarn be:dev\"",
     "setup": "yarn && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
+    "setup:ci": "yarn install --immutable && cp fe/config/application.template.yml fe/config/application.yml && cp be/prisma/env.template be/prisma/.env",
     "test:integration": "cypress run",
     "test": "yarn && node scripts/test-suite.mjs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "yarn eslint --fix --ext .js,.jsx,.json . && yarn prettier --write .",
+    "lint:ci": "yarn eslint --fix --ext .js,.jsx --max-warnings=0 ."
   },
   "devDependencies": {
+    "@launchpadlab/eslint-config": "^3.0.1",
     "@launchpadlab/prettier-config": "^1.0.0",
     "concurrently": "^8.0.1",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-webpack-plugin": "^4.0.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7"
-  },
-  "lint-staged": {
-    "fe/src/**/*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix --max-warnings=0"
-    ],
-    "fe/src/**/*.{json,scss}": "prettier --write",
-    "be/**/*.{js,json,cjs}": [
-      "prettier --write",
-      "eslint --fix --max-warnings=0"
-    ]
   }
 }

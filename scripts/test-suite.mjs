@@ -9,6 +9,9 @@ async function main() {
     log('Running unit fe tests...')
     exec('yarn --cwd fe run test:unit')
 
+    log('Checking linting')
+    exec('yarn lint:ci')
+
     log('Running integration tests...')
     const doSeed = !process.argv.includes('no-seed')
     const port = process.env.PORT || 8080
@@ -22,7 +25,7 @@ async function main() {
 async function runIntegrationTest(port, doSeed) {
   if (doSeed) {
     log('Seeding test database...')
-    exec('yarn --cwd fe run seed:test')
+    exec('yarn --cwd be run seed')
   }
   log('Starting server...')
   // Run server in the background, redirect output to /dev/null

@@ -11,3 +11,5 @@ fe/node_modules/
 cypress/screenshots/
 nohup.out
 /tmp/**/*
+
+yarn-error.log

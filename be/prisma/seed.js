@@ -2,6 +2,8 @@ import prisma from './seeds/prismaClient.js'
 import folderSeeder from './seeds/seeders/folderSeeder.js'
 import fileSeeder from './seeds/seeders/fileSeeder.js'
 
+/* eslint-disable no-console */
+
 const load = async () => {
   try {
     await folderSeeder()

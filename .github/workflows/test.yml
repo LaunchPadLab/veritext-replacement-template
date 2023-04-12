@@ -1,5 +1,5 @@
 # .github/workflows/test.yaml
-name: test
+name: build / migrate/ tests
 on: push
 jobs:
   test:
@@ -38,3 +38,9 @@ jobs:
         run: yarn db:migrate:prod
       - name: Run tests
         run: yarn test
+      - name: Check for ugly files (Prettier)
+        uses: creyD/prettier_action@v4.2
+        with:
+          # fail if there are ugly files
+          dry: true
+          prettier_options: --write **/*.{js,jsx,scss}

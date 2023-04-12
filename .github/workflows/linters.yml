@@ -27,4 +27,5 @@ jobs:
           dry: true
           prettier_options: --write **/*.{js,jsx,scss}
       - name: Run ESLint
-        run: node_modules/.bin/eslint --fix --max-warnings=0 .
+        uses: ./
+        run: eslint . --ext .js,.jsx

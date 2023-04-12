@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '18.12.1'
           cache: 'yarn'
-          cache-dependency-path: ['package.json', 'yarn.lock', fe/package.json, be/package.json]
+          cache-dependency-path: '**/package-lock.json'
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Run setup script

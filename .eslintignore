@@ -2,5 +2,9 @@ build
 tmp
 node_modules
 fe/node_modules
+fe/package.json
 be/node_modules
+be/package.json
+package.json
+yarn.lock
 cypress

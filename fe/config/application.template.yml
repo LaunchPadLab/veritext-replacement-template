@@ -5,6 +5,7 @@ development:
   PROXIED_API_TOKEN: ''
 
   # === FE ===
+  REACT_APP_API_URL: http://localhost:8080
   API_URL: http://localhost:8080/api/v1
   FE_PORT: 3000
 

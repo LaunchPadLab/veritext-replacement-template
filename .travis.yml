@@ -1,5 +1,7 @@
 language: node_js
 dist: focal
+services:
+  - postgresql
 cache:
   npm: true
   yarn: true
@@ -13,4 +15,5 @@ addons:
       - libgconf-2-4
 before_script:
   # ensure application config template is copied, as the server requires these env-var configs to be available
+  - PGPASSWORD=postgres psql -c 'create database veritext_box;' -U postgres -p 5432
   - yarn setup

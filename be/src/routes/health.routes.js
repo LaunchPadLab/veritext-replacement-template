@@ -2,7 +2,7 @@
 
 import { Router } from 'express'
 
-// memoize router so that when the consumes retrieve it through getter,
+// memoize router so that when the consumers retrieve it through getter,
 // it's not a fresh instance, as that essentially wipes out the routes
 const router = Router()
 
@@ -24,6 +24,6 @@ export class HealthRoute {
   }
 
   initializeRoutes() {
-    this.router.get(`${this.path}`, this.buildResponse)
+    this.router.get(this.path, this.buildResponse)
   }
 }

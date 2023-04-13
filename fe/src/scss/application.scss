@@ -32,8 +32,19 @@
 // Page Styles
 @import 'pages/main';
 @import 'pages/styleguide';
+@import 'pages/library';
 
 // Project Specific Global Styles
+html,
+body,
+#root {
+  height: 100vh;
+  margin: 0;
+}
+
+#main-content {
+  height: 100%;
+}
 
 // Styles for Assistive Technologies (keep these last!)
 @import 'components/visually-hidden';

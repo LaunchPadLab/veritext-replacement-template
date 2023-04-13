@@ -4,10 +4,7 @@ import exact from 'prop-types-exact'
 import * as Types from 'types'
 
 const propTypes = {
-  items: PropTypes.oneOfType([
-    PropTypes.arrayOf(Types.folder).isRequired,
-    PropTypes.arrayOf(Types.file).isRequired,
-  ]),
+  items: PropTypes.arrayOf(Types.item).isRequired,
 }
 
 const defaultProps = {}

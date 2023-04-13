@@ -20,3 +20,5 @@ export const folder = PropTypes.shape({
   childrenCount: PropTypes.number.isRequired,
   path: PropTypes.string.isRequired,
 })
+
+export const item = PropTypes.oneOfType([folder, file])

@@ -57,7 +57,7 @@ test:
   CREDENTIALS: true
 
   # DATABASE
-  DATABASE_URL: your-local-postgres-url
+  DATABASE_URL: postgresql://postgres:postgres@localhost:5432/veritext_box_test
 
   # SWAGGER
   SWAGGER_SERVER_URL: http://localhost:8080

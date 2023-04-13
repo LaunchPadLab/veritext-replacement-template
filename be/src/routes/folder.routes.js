@@ -21,9 +21,9 @@ export class FolderRoute {
 
   async initializeRoutes() {
     this.router.get(`${this.path}`, await this.folder.getFolders)
-    // this.router.get(`${this.path}/:id(\\d+)`, this.folder.getFolderById);
-    // this.router.post(`${this.path}`, this.folder.createFolder);
-    // this.router.put(`${this.path}/:id(\\d+)`, this.folder.updateFolder);
-    // this.router.delete(`${this.path}/:id(\\d+)`, this.folder.deleteFolder);
+    this.router.get(`${this.path}/:id(\\d+)`, this.folder.getFolderById)
+    this.router.post(`${this.path}`, this.folder.createFolder)
+    this.router.put(`${this.path}/:id(\\d+)`, this.folder.updateFolder)
+    this.router.delete(`${this.path}/:id(\\d+)`, this.folder.deleteFolder)
   }
 }

@@ -1,6 +1,7 @@
 const URL = 'api/v1/files'
 
 describe('File Endpoints', () => {
+  // # getFiles
   it('should get all files', () => {
     cy.request('GET', URL).then((response) => {
       expect(response.status).to.eq(200)
@@ -9,6 +10,7 @@ describe('File Endpoints', () => {
     })
   })
 
+  //   #getFileById
   it('should get a file by id', () => {
     cy.request('GET', `${URL}/1`).then((response) => {
       expect(response.status).to.eq(200)

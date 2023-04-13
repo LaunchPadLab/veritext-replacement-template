@@ -1,0 +1,21 @@
+.library {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  &__file-tree,
+  &__folder-view {
+    padding: 1rem 2rem;
+  }
+
+  &__file-tree {
+    .folder {
+      padding: 1rem 0;
+    }
+  }
+
+  &__folder-view {
+    border-left: 1px solid lightgrey;
+  }
+}

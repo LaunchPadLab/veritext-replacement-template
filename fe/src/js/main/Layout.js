@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import * as routerSelectors from 'connected-react-router'
 import { getFlashMessages, flashMessageType } from 'redux-flash'
 import { FlashMessageContainer } from 'lp-components'
-import { Header, Footer, ServerStatusOverlay, SkipNavLink } from 'components'
+import { ServerStatusOverlay, SkipNavLink } from 'components'
 import { isProduction } from 'config'
 import { scrollToTop } from 'utils'
 
@@ -22,14 +22,12 @@ function Layout({ flashMessages, pathname, children }) {
     scrollToTop()
   }, [pathname])
   return (
-    <div>
+    <>
       {!isProduction() && <ServerStatusOverlay />}
       <FlashMessageContainer messages={flashMessages} />
       <SkipNavLink targetId="main-content">Skip to main content</SkipNavLink>
-      <Header />
       <main id="main-content">{children}</main>
-      <Footer />
-    </div>
+    </>
   )
 }
 

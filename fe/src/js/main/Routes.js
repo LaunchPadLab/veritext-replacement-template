@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import Layout from './Layout'
 import { Routes as HomeRoutes } from './home'
 import { Routes as StyleguideRoutes } from './styleguide'
+import { Routes as LibraryRoutes } from './library'
 
 const propTypes = {}
 const defaultProps = {}
@@ -16,6 +17,9 @@ function Routes() {
         </Route>
         <Route path="/styleguide">
           <StyleguideRoutes />
+        </Route>
+        <Route path="/library">
+          <LibraryRoutes />
         </Route>
         <Redirect path="*" to="/home" />
       </Switch>

@@ -11,7 +11,7 @@ const defaultProps = {}
 
 function FileTree({ folders }) {
   return (
-    <aside className="vault__file-tree">
+    <aside className="library__file-tree">
       {folders.map((folder, index) => {
         return (
           <div className="folder" key={index}>

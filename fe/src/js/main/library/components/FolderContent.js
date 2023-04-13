@@ -11,7 +11,7 @@ const defaultProps = {}
 
 function FolderContent({ items }) {
   return (
-    <div className="vault__folder-view">
+    <div className="library__folder-view">
       {items.map((item) => {
         return <div key={item.id}>{item.name}</div>
       })}

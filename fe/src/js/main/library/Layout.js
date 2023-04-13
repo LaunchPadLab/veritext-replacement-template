@@ -8,7 +8,7 @@ const propTypes = {
 const defaultProps = {}
 
 function Layout({ children }) {
-  return <div className="vault">{children}</div>
+  return <div className="library">{children}</div>
 }
 
 Layout.propTypes = propTypes

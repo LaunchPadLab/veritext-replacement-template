@@ -8,7 +8,7 @@ const propTypes = {}
 
 const defaultProps = {}
 
-function Vault() {
+function Library() {
   const fileTree = {
     repository: 'Vault',
     folders: [
@@ -54,9 +54,9 @@ function Vault() {
   )
 }
 
-Vault.propTypes = propTypes
+Library.propTypes = propTypes
 
-Vault.defaultProps = defaultProps
+Library.defaultProps = defaultProps
 
 function mapStateToProps() {
   return {}
@@ -64,4 +64,4 @@ function mapStateToProps() {
 
 const mapDispatchToProps = {}
 
-export default compose(connect(mapStateToProps, mapDispatchToProps))(Vault)
+export default compose(connect(mapStateToProps, mapDispatchToProps))(Library)

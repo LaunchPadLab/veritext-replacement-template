@@ -13,7 +13,7 @@ function Routes() {
     <Layout>
       <Switch>
         <Route exact path={path}>
-          <Views.Vault />
+          <Views.Library />
         </Route>
       </Switch>
     </Layout>

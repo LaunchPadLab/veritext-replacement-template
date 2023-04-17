@@ -1,9 +1,5 @@
-// import { createRequest } from 'lp-redux-api'
+import { createStubRequest } from 'lp-redux-api'
 
-// API actions go here.
+import files from '../../../fixtures/files.json'
 
-// Example:
-
-// export const fetchUser = createRequest('FETCH_USER', (id) => ({
-//    url: '/users/' + id,
-// }))
+export const fetchFiles = createStubRequest('FETCH_TODOS', files)

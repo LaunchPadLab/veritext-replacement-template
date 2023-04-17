@@ -4,6 +4,7 @@ import Layout from './Layout'
 import { Routes as HomeRoutes } from './home'
 import { Routes as StyleguideRoutes } from './styleguide'
 import { Routes as LibraryRoutes } from './library'
+// import { Routes as FileRoutes } from '../main/files/Routes'
 
 const propTypes = {}
 const defaultProps = {}
@@ -21,6 +22,9 @@ function Routes() {
         <Route path="/library">
           <LibraryRoutes />
         </Route>
+        {/* <Route path="/files">
+          <FileRoutes/>
+        </Route> */}
         <Redirect path="*" to="/home" />
       </Switch>
     </Layout>

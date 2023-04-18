@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import AWS from 'aws-sdk'
+import axios from 'axios'
 
 const FileUpload = () => {
   const [uploading, setUploading] = useState(false)
@@ -19,6 +20,7 @@ const FileUpload = () => {
       })
 
       const uploadPromises = []
+      const fileUrls = []
       for (let i = 0; i < files.length; i++) {
         const file = files[i]
         const params = {
@@ -30,9 +32,21 @@ const FileUpload = () => {
         const uploadPromise = s3.upload(params).promise()
         uploadPromises.push(uploadPromise)
       }
-      await Promise.all(uploadPromises)
+      const uploadResponses = await Promise.all(uploadPromises)
 
       console.log('Files uploaded successfully!')
+
+      for (let i = 0; i < uploadResponses.length; i++) {
+        const uploadedFile = uploadResponses[i]
+        const fileUrl = `https://your-bucket-name.s3.amazonaws.com/${uploadedFile.Key}`
+        fileUrls.push(fileUrl)
+      }
+
+      // After the files have been uploaded, send a POST request to the backend endpoint with the S3 file paths
+      const response = await axios.post('/your-backend-endpoint', {
+        files: fileUrls,
+      })
+      console.log('POST request sent successfully!', response.data)
     } catch (err) {
       console.error(err)
     } finally {

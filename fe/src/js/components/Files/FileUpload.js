@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import AWS from 'aws-sdk'
 
 const FileUpload = () => {
-  const [file, setFile] = useState(null)
   const [uploading, setUploading] = useState(false)
-
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0])
-  }
+  const fileInputRef = useRef(null)
 
   const handleUploadClick = async () => {
-    if (!file) return
+    if (uploading) return
+    const files = fileInputRef.current.files
+
+    if (!files.length) return
+
     setUploading(true)
 
     try {
@@ -18,27 +18,39 @@ const FileUpload = () => {
         // Your AWS S3 configuration here
       })
 
-      const params = {
-        Bucket: 'your-bucket-name',
-        Key: file.name,
-        Body: file,
-        ACL: 'public-read', // Change this if necessary
+      const uploadPromises = []
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i]
+        const params = {
+          Bucket: 'your-bucket-name',
+          Key: file.name,
+          Body: file,
+          ACL: 'public-read', // Change this if necessary
+        }
+        const uploadPromise = s3.upload(params).promise()
+        uploadPromises.push(uploadPromise)
       }
+      await Promise.all(uploadPromises)
 
-      await s3.upload(params).promise()
-      console.log('File uploaded successfully!')
+      console.log('Files uploaded successfully!')
     } catch (err) {
       console.error(err)
     } finally {
       setUploading(false)
-      setFile(null)
+      fileInputRef.current.value = ''
     }
   }
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
-      <button disabled={uploading} onClick={handleUploadClick}>
+      <input
+        type="file"
+        ref={fileInputRef}
+        style={{ display: 'none' }}
+        onChange={handleUploadClick}
+        multiple
+      />
+      <button disabled={uploading} onClick={() => fileInputRef.current.click()}>
         {uploading ? 'Uploading...' : 'Upload'}
       </button>
     </div>

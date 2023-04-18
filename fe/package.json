@@ -27,6 +27,7 @@
     "@launchpadlab/lp-requests": "^4.2.2",
     "@sentry/browser": "^7.26.0",
     "autoprefixer": "^10.4.4",
+    "aws-sdk": "^2.1360.0",
     "babel-loader": "^9.1.0",
     "bourbon": "^7.2.0",
     "bourbon-neat": "^4.0.0",

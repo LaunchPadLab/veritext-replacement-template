@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import AWS from 'aws-sdk'
 import axios from 'axios'
 
+const MAX_FILE_SIZE = 100 * 1024 * 1024 // 100 MB
+
 const FileUpload = () => {
   const [uploading, setUploading] = useState(false)
   const fileInputRef = useRef(null)
@@ -11,6 +13,39 @@ const FileUpload = () => {
     const files = fileInputRef.current.files
 
     if (!files.length) return
+    if (files.length > 10) {
+      alert('You can upload a maximum of 10 files')
+      return
+    }
+
+    const acceptedFileTypes = [
+      'image/png',
+      'image/jpeg',
+      'image/gif',
+      'video/mp4',
+      'application/pdf',
+      'application/msword',
+      'application/vnd.ms-excel',
+      'text/csv',
+      'audio/mpeg',
+    ]
+    const invalidFiles = []
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i]
+      if (file.size > MAX_FILE_SIZE) {
+        invalidFiles.push(file.name)
+      }
+      if (!acceptedFileTypes.includes(file.type)) {
+        invalidFiles.push(file.name)
+      }
+    }
+    if (invalidFiles.length > 0) {
+      const message = `The following files are invalid: ${invalidFiles.join(
+        ', '
+      )}`
+      alert(message)
+      return
+    }
 
     setUploading(true)
 
@@ -43,7 +78,7 @@ const FileUpload = () => {
       }
 
       // After the files have been uploaded, send a POST request to the backend endpoint with the S3 file paths
-      const response = await axios.post('/your-backend-endpoint', {
+      const response = await axios.post('/api/v1/backend-endpoint', {
         files: fileUrls,
       })
       console.log('POST request sent successfully!', response.data)
@@ -63,6 +98,7 @@ const FileUpload = () => {
         style={{ display: 'none' }}
         onChange={handleUploadClick}
         multiple
+        accept=".png,.jpeg,.jpg,.gif,.mp4,.pdf,.doc,.docx,.xls,.xlsx,.csv,.mp3"
       />
       <button disabled={uploading} onClick={() => fileInputRef.current.click()}>
         {uploading ? 'Uploading...' : 'Upload'}

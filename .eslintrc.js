@@ -31,6 +31,7 @@ module.exports = {
   },
   rules: {
     'no-warning-comments': 'off',
+    'no-console': 'off',
     'import/no-extraneous-dependencies': 'off',
   },
 }

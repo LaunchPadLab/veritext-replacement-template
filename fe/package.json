@@ -40,7 +40,7 @@
     "css-loader": "^6.7.3",
     "dot-index-webpack-plugin": "^5.2.0",
     "expose-env-middleware": "^2.0.0",
-    "express": "^4.17.3",
+    "express": "^4.20.0",
     "express-enforces-ssl": "^1.1.0",
     "figaro-js": "^3.0.2",
     "history": "^4.10.1",
